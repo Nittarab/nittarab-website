@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.font-clash-display-variable {
+  font-family: 'ClashDisplay-Variable', sans-serif;
+  font-variation-settings: 'wght' var(--font-weight, 400);
+}
