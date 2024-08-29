@@ -1,17 +1,33 @@
+'use client'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import ThreeJSScene from '../components/ThreeJSScene'
 
 export default function Home() {
+  const [isCollapsing, setIsCollapsing] = useState(false)
+
+  const handleCollapseToggle = () => {
+    setIsCollapsing(!isCollapsing)
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 font-clash-display">
+    <div className="relative min-h-screen font-clash-display">
+      <div className="absolute inset-0 z-0">
+        <ThreeJSScene isCollapsing={isCollapsing} />
+      </div>
+
       <Head>
         <title>Patrick Barattin - Software Engineer & Entrepreneur</title>
         <meta name="description" content="Personal website of Patrick Barattin, software engineer and entrepreneur" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container mx-auto px-4 py-16 flex flex-col items-center">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-pink-50 opacity-70 z-10"></div>
+
+      <main className="relative container mx-auto px-4 py-16 flex flex-col items-center z-20">
         <div className="mb-12 relative">
           <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
             <Image
@@ -24,7 +40,6 @@ export default function Home() {
           </div>
           <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-tr from-purple-300 to-pink-300 rounded-full opacity-50 animate-pulse"></div>
         </div>
-
 
         <h1 className="text-5xl font-clash-display-bold mb-4 text-gray-800">Patrick Barattin</h1>
         <p className="text-xl font-clash-display-light text-gray-600 mb-8 text-center max-w-2xl">
@@ -45,18 +60,22 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-        <div className="flex space-x-4">
-          <Link href="/projects" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-shadow duration-200">
-            View Projects
-          </Link>
-          <Link href="/contact" className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-md text-gray-800 px-6 py-3 rounded-full border border-white border-opacity-20 hover:shadow-lg transition-all duration-200">
-            Get in Touch
+        <div className="flex justify-center space-x-4">
+          <button
+            onClick={handleCollapseToggle}
+            className="px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors duration-300"
+          >
+            {isCollapsing ? "Expand Shapes" : "Collapse Shapes"}
+          </button>
+          <Link href="/contact">
+            <button className="px-6 py-3 text-lg font-semibold text-blue-600 bg-white rounded-md border-2 border-blue-600 hover:bg-blue-50 transition-colors duration-300">
+              Get in Touch
+            </button>
           </Link>
         </div>
       </main>
 
-      <footer className="text-center py-8 text-gray-500 font-clash-display-light">
+      <footer className="relative text-center py-8 text-gray-500 font-clash-display-light z-20">
         © {new Date().getFullYear()} Patrick Barattin. All rights reserved.
       </footer>
     </div>
