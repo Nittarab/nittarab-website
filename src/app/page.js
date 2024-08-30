@@ -28,7 +28,7 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-tr from-purple-300 to-pink-300 rounded-full opacity-50 animate-pulse"></div>
+            
           </div>
 
           <h1 className="text-5xl font-clash-display mb-4 text-gray-800">Patrick Barattin</h1>

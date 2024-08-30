@@ -21,6 +21,9 @@ module.exports = {
         'clash-display-semibold': ['ClashDisplay-Semibold', 'sans-serif'],
         'clash-display-bold': ['ClashDisplay-Bold', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
     },
   },
   plugins: [],
