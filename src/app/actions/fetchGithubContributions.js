@@ -27,7 +27,7 @@ export async function fetchGithubContributions() {
   const userName = 'nittarab'
   const to = new Date()
   const from = new Date(to)
-  from.setDate(from.getDate() - 84) // 12 weeks * 7 days = 84 days
+  from.setDate(from.getDate() - 119) // 17 weeks * 7 days = 119 days
   const variables = { userName, from: from.toISOString(), to: to.toISOString() }
 
   try {
@@ -64,7 +64,7 @@ function prepareContributionData(rawContributions, from, to) {
   const preparedData = []
   const startDate = new Date(from)
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 17; i++) {
     const column = []
     for (let j = 0; j < 7; j++) {
       const date = new Date(startDate)

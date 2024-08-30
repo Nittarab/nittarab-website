@@ -69,13 +69,13 @@ export default function GitHubCard({ className }) {
         <p className="text-xl font-clash-display text-gray-800">GitHub</p>
       </div>
       <div className="mb-4 relative">
-        <div className="grid grid-cols-12 gap-1">
+        <div className="grid grid-cols-[repeat(17,_minmax(0,1fr))] gap-1">
           {contributionData.contributions.map((column, columnIndex) => (
             <div key={columnIndex} className="grid grid-rows-7 gap-1">
               {column.map((day, dayIndex) => (
                 <div
                   key={`${columnIndex}-${dayIndex}`}
-                  className={`w-4 h-4 rounded-sm ${getColorClass(day.count)}`}
+                  className={`aspect-square rounded-lg ${getColorClass(day.count)}`}
                   onMouseEnter={(e) => handleMouseEnter(e, day.date, day.count)}
                   onMouseLeave={handleMouseLeave}
                 />
@@ -83,6 +83,7 @@ export default function GitHubCard({ className }) {
             </div>
           ))}
         </div>
+
         {hoverInfo && (
           <div 
             ref={popoverRef}
@@ -93,7 +94,7 @@ export default function GitHubCard({ className }) {
         )}
       </div>
       <div className="text-base text-gray-700 mb-3 font-semibold">
-        Total contributions: {contributionData.totalContributions} in 12 weeks
+        Total contributions: {contributionData.totalContributions} in 17 weeks
       </div>
       <a
         href="https://github.com/nittarab"
