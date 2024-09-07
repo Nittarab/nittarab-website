@@ -11,7 +11,6 @@ export default function GitHubCard({ className }) {
 
   useEffect(() => {
     fetchGithubContributions().then(result => {
-      console.log('GitHub contributions:', result);
       setContributionData(result);
     });
   }, []);
