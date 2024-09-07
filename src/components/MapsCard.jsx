@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
+import Image from 'next/image'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoibml0dGFyYWIiLCJhIjoiY20waDM0cWlvMDZsNTJucXU3ZWN4YXVzaCJ9.wJU1s2WZm2HwYQe2LkT0SA'
@@ -11,6 +12,7 @@ export default function MapsCard() {
   const map = useRef(null)
   const marker = useRef(null)
   const [error, setError] = useState(null)
+  const [planePosition, setPlanePosition] = useState({ x: -10, y: 110 })
 
   useEffect(() => {
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
@@ -52,7 +54,19 @@ export default function MapsCard() {
       setError('Failed to initialize the map.')
     }
 
-    return () => map.current?.remove()
+    const animatePlane = () => {
+      setPlanePosition(prev => ({
+        x: prev.x > 110 ? -10 : prev.x + 0.5,
+        y: prev.x > 110 ? 110 : prev.y - 0.5
+      }))
+    }
+
+    const animationInterval = setInterval(animatePlane, 80)
+
+    return () => {
+      map.current?.remove()
+      clearInterval(animationInterval)
+    }
   }, [])
 
   if (error) {
@@ -64,6 +78,34 @@ export default function MapsCard() {
       <div ref={mapContainer} className="w-full h-64 rounded-lg" />
       <div className="absolute bottom-4 left-4 bg-white/70 px-2 py-1.5 text-sm shadow rounded-lg">
         <p>Zurich</p>
+      </div>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/planeshadow.png"
+            alt="Plane Shadow"
+            width={25}
+            height={25}
+            className="absolute"
+            style={{
+              top: `${planePosition.y + 5}%`,
+              left: `${planePosition.x + 5}%`,
+              transform: 'translate(-50%, -50%) rotate(45deg)'
+            }}
+          />
+          <Image
+            src="/images/plane.png"
+            alt="Plane"
+            width={25}
+            height={25}
+            className="absolute"
+            style={{
+              top: `${planePosition.y}%`,
+              left: `${planePosition.x}%`,
+              transform: 'translate(-50%, -50%) rotate(45deg)'
+            }}
+          />
+        </div>
       </div>
     </div>
   )
