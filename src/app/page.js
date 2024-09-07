@@ -31,16 +31,16 @@ export default function Home() {
             
           </div>
 
-          <h1 className="text-5xl font-clash-display mb-4 text-gray-800">Patrick Barattin</h1>
-          <p className="text-xl font-clash-display-light text-gray-600 mb-8 max-w-md">
+          <h1 className="text-4xl font-clash-display-semibold mb-4 text-gray-800">Patrick Barattin</h1>
+          <p className="text-lg font-clash-display-light text-gray-600 mb-8 max-w-md">
             Software Engineer | Entrepreneur | Builder of Things
           </p>
 
           <div className="flex space-x-4">
-            <Link href="/projects" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-shadow duration-200">
+            <Link href="/projects" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-shadow duration-200 text-sm font-clash-display-medium">
               View Projects
             </Link>
-            <Link href="/contact" className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-md text-gray-800 px-6 py-3 rounded-full border border-white border-opacity-20 hover:shadow-lg transition-all duration-200">
+            <Link href="/contact" className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-md text-gray-800 px-6 py-3 rounded-full border border-white border-opacity-20 hover:shadow-lg transition-all duration-200 text-sm font-clash-display-medium">
               Get in Touch
             </Link>
           </div>
