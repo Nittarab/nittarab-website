@@ -14,14 +14,14 @@ export default function Home() {
   const [isGitHubCardLoaded, setIsGitHubCardLoaded] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 font-clash-display">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-pink-50 font-clash-display">
       <Head>
         <title>Patrick Barattin - Software Engineer & Entrepreneur</title>
         <meta name="description" content="Personal website of Patrick Barattin, software engineer and entrepreneur" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-start justify-between">
+      <main className="flex-grow container mx-auto px-4 py-16 flex flex-col md:flex-row items-start justify-between">
         <div className="md:w-1/3 mb-12 md:mb-0">
           <div className="mb-12 relative">
             <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="text-center py-8 text-gray-500 font-clash-display-light">
+      <footer className="text-center py-8 text-gray-500 font-clash-display-light mt-auto">
         © {new Date().getFullYear()} Patrick Barattin. All rights reserved.
       </footer>
     </div>
