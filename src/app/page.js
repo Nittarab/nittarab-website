@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,6 +11,8 @@ import MapsCard from '../components/MapsCard'
 import GitHubCard from '../components/GitHubCard'
 
 export default function Home() {
+  const [isGitHubCardLoaded, setIsGitHubCardLoaded] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-pink-50 font-clash-display">
       <Head>
@@ -49,14 +54,12 @@ export default function Home() {
         <div className="md:w-2/3 grid grid-cols-3 gap-4 w-full max-w-2xl">
           <XCard />
           <SubstackCard />
+          <LinkedInCard />
           <div className="row-span-2">
-            <LinkedInCard />
-            <div className="mt-4">
-              <MapsCard />
-            </div>
+            {isGitHubCardLoaded && <MapsCard className="h-full" />}
           </div>
-          <div className="col-span-2">
-            <GitHubCard />
+          <div className="col-span-2 row-span-2">
+            <GitHubCard className="h-full" onLoad={() => setIsGitHubCardLoaded(true)} />
           </div>
         </div>
       </main>

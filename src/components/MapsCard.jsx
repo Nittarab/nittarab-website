@@ -74,8 +74,8 @@ export default function MapsCard() {
   }
 
   return (
-    <div className="relative bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 hover:scale-105 transition-all">
-      <div ref={mapContainer} className="w-full h-64 rounded-lg" />
+    <div className="relative bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 hover:scale-105 transition-all h-full">
+      <div ref={mapContainer} className="w-full h-full rounded-lg" />
       <div className="absolute bottom-4 left-4 bg-white/70 px-2 py-1.5 text-sm shadow rounded-lg">
         <p>Zurich</p>
       </div>

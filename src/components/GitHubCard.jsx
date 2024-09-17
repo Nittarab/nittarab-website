@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { fetchGithubContributions } from '../app/actions/fetchGithubContributions'
 
-export default function GitHubCard({ className }) {
+export default function GitHubCard({ className, onLoad }) {
   const [contributionData, setContributionData] = useState(null)
   const [hoverInfo, setHoverInfo] = useState(null)
   const containerRef = useRef(null)
@@ -12,8 +12,9 @@ export default function GitHubCard({ className }) {
   useEffect(() => {
     fetchGithubContributions().then(result => {
       setContributionData(result);
+      onLoad(); // Call onLoad when data is fetched
     });
-  }, []);
+  }, [onLoad]);
 
   const getColorClass = (count) => {
     if (count === 0) return 'bg-neutral-50';
