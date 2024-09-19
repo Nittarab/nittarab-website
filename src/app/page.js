@@ -41,10 +41,10 @@ export default function Home() {
             Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer
           </p>
           <p className="text-base font-clash-display-light text-gray-600 mb-8 max-w-md">
-            By day, I'm dedicated to enhancing e-commerce at on.com
+            By day, I&apos;m dedicated to enhancing e-commerce at on.com
           </p>
           <p className="text-base font-clash-display-light text-gray-600 mb-8 max-w-md">
-            By night, I'm building projects and reading more on my Substack.
+            By night, I&apos;m building projects and reading more on my Substack.
           </p>
 
           <div className="flex space-x-4">
