@@ -38,7 +38,13 @@ export default function Home() {
 
           <h1 className="text-4xl font-clash-display-semibold mb-4 text-gray-800">Patrick Barattin</h1>
           <p className="text-lg font-clash-display-light text-gray-600 mb-8 max-w-md">
-            Software Engineer | Entrepreneur | Builder of Things
+            Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer
+          </p>
+          <p className="text-base font-clash-display-light text-gray-600 mb-8 max-w-md">
+            By day, I&apos;m dedicated to enhancing e-commerce at on.com
+          </p>
+          <p className="text-base font-clash-display-light text-gray-600 mb-8 max-w-md">
+            By night, I&apos;m building projects and reading more on my Substack.
           </p>
 
           <div className="flex space-x-4">
@@ -64,7 +70,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="text-center py-8 text-gray-500 font-clash-display-light mt-auto">
+      <footer className="text-center py-8 text-gray-500 font-clash-display-light">
         © {new Date().getFullYear()} Patrick Barattin. All rights reserved.
       </footer>
     </div>
