@@ -65,6 +65,6 @@ ENV PORT=80
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
-CMD node server.js
+CMD ["node", "server.js"]
 HEALTHCHECK --interval=1s --timeout=5s --start-period=5s --retries=3 \
   CMD [ "curl", "-f", "http://localhost:80/up" ]
