@@ -9,8 +9,6 @@ on:
     
   release:
     types: [created]
-    tags:
-      - 'v*'
 
 jobs:
   build-and-push-image:
