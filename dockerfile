@@ -1,7 +1,7 @@
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 # Install dependencies only when needed
-FROM base AS deps
+FROM base AS deps 
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
@@ -58,11 +58,13 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 80
+EXPOSE 80 443
 
 ENV PORT=80
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
-CMD ["node", "server.js"]]=
+CMD ["node", "server.js"]
+HEALTHCHECK --interval=1s --timeout=5s --start-period=5s --retries=3 \
+  CMD [ "curl", "-f", "http://localhost:80/up" ]
