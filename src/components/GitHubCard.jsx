@@ -75,7 +75,7 @@ export default function GitHubCard({ className, onLoad }) {
               {column.map((day, dayIndex) => (
                 <div
                   key={`${columnIndex}-${dayIndex}`}
-                  className={`aspect-square rounded-lg ${getColorClass(day.count)}`}
+                  className={`aspect-square rounded-lg ${getColorClass(day.count)} `}
                   onMouseEnter={(e) => handleMouseEnter(e, day.date, day.count)}
                   onMouseLeave={handleMouseLeave}
                 />
