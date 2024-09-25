@@ -20,9 +20,8 @@ proxy:
   healthcheck:
     path: /up
   app_port: 80
-
-#   ssl: true
-#   host: test.nittarab.dev
+  ssl: true
+  host: test.nittarab.dev
 
 # Credentials for your image host.
 registry:
