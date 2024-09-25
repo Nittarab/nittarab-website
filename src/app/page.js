@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           {/* Mobile-Tablet Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:hidden">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
             <XCard />
             <SubstackCard />  
             {isGitHubCardLoaded && <MapsCard className="col-span-1 sm:col-span-2" />}
