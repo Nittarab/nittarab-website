@@ -21,7 +21,7 @@ proxy:
     path: /up
   app_port: 80
   ssl: true
-  host: test.nittarab.dev
+  host: nittarab.dev
 
 # Credentials for your image host.
 registry:
