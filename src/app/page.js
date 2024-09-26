@@ -45,17 +45,6 @@ export default function Home() {
           <p className="text-sm sm:text-base font-clash-display-light text-gray-600 mb-8 sm:mb-10 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
             By night, I&apos;m building projects and reading more on my Substack.
           </p>
-
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
-            <Link href="/projects" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg transition-all duration-300 text-sm font-clash-display-medium relative overflow-hidden group text-center">
-              <span className="relative z-10">View Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-            </Link>
-            <Link href="/contact" className="bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-gray-300 hover:shadow-lg transition-all duration-300 text-sm font-clash-display-medium relative overflow-hidden group text-center">
-              <span className="relative z-10">Get in Touch</span>
-              <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-            </Link>
-          </div>
         </div>
 
         <div className="w-full lg:w-2/3 grid gap-4 sm:gap-6 max-w-2xl mx-auto lg:mx-0 mt-12 lg:mt-0">
