@@ -12,7 +12,6 @@ import GitHubCard from '../components/GitHubCard'
 
 export default function Home() {
   const [isGitHubCardLoaded, setIsGitHubCardLoaded] = useState(false)
-
   return (
     <div className="min-h-screen flex flex-col bg-white font-clash-display">
       <Head>

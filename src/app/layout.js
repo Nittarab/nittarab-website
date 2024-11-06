@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Script from 'next/script';
 import "./globals.css";
 import './clash-display.css'
 
@@ -30,30 +31,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">  
-    <head>
-      <script
-        id="matomo-script"
-        dangerouslySetInnerHTML={{
-          __html: `
-            var _paq = window._paq = window._paq || [];
-            _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-            _paq.push(["setCookieDomain", "*.nittarab.dev"]);
-            _paq.push(["setDoNotTrack", true]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            console.log("Matomo script loaded");
-            (function() {
-              var u="https://nittarabdev.matomo.cloud/";
-              _paq.push(['setTrackerUrl', u+'matomo.php']);
-              _paq.push(['setSiteId', '1']);
-              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-              g.async=true; g.src='https://cdn.matomo.cloud/nittarabdev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-            })();
-          `
-        }}
-      />
-    </head>
-      <body className={inter.className}>{children}</body>
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-WXVGFLXNJF"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WXVGFLXNJF');
+          `}
+        </Script>
+      </head>
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

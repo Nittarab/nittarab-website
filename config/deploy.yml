@@ -47,6 +47,8 @@ env:
   #   DB_HOST: 192.168.0.2
   secret:
     - GITHUB_TOKEN
+    - NEXT_PUBLIC_POSTHOG_KEY
+    - NEXT_PUBLIC_POSTHOG_HOST
 
 # Use a different ssh user than root
 # ssh:
