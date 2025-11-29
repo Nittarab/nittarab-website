@@ -1,0 +1,6 @@
+# robots.txt for patrickbarattin.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://patrickbarattin.com/sitemap.xml
