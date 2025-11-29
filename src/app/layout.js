@@ -61,9 +61,6 @@ export const metadata = {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification
-  },
 };
 
 export default function RootLayout({ children }) {
