@@ -1,9 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import XCard from '../components/XCard'
 import SubstackCard from '../components/SubstackCard'
 import LinkedInCard from '../components/LinkedInCard'
@@ -14,12 +12,6 @@ export default function Home() {
   const [isGitHubCardLoaded, setIsGitHubCardLoaded] = useState(false)
   return (
     <div className="min-h-screen flex flex-col bg-white font-clash-display">
-      <Head>
-        <title>Patrick Barattin - Software Engineer & Entrepreneur</title>
-        <meta name="description" content="Personal website of Patrick Barattin, software engineer and entrepreneur" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 flex flex-col lg:flex-row items-start justify-between">
         <div className="w-full lg:w-1/3 mb-12 lg:mb-0">
           <div className="mb-8 sm:mb-12 lg:mb-16 flex justify-center lg:justify-start">
