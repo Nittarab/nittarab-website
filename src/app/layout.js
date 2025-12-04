@@ -6,7 +6,7 @@ import './clash-display.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
-const siteUrl = "https://patrickbarattin.com";
+const siteUrl = "https://nittarab.dev";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -14,7 +14,7 @@ export const metadata = {
     default: "Patrick Barattin - Software Engineer & Entrepreneur",
     template: "%s | Patrick Barattin"
   },
-  description: "Personal website of Patrick Barattin, software engineer and entrepreneur. Passionate Ruby on Rails developer, Fintech enthusiast, and AI explorer.",
+  description: "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
   keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI", "Web Development", "E-commerce"],
   authors: [{ name: "Patrick Barattin", url: siteUrl }],
   creator: "Patrick Barattin",
@@ -35,7 +35,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer",
+    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
     type: "website",
     url: siteUrl,
     siteName: "Patrick Barattin",
@@ -51,15 +51,18 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@patrickbarattin",
-    creator: "@patrickbarattin",
+    site: "@nittarab",
+    creator: "@nittarab",
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer",
+    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
     images: ["/nittarab_profile.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
+  },
+  other: {
+    'theme-color': '#ffffff',
   },
 };
 
@@ -68,6 +71,8 @@ export default function RootLayout({ children }) {
     <html lang="en">  
       <head>
         <StructuredData />
+        {/* Preload hero image for faster Largest Contentful Paint */}
+        <link rel="preload" as="image" href="/nittarab_profile.jpg" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-WXVGFLXNJF"

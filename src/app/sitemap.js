@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://patrickbarattin.com';
+  const baseUrl = 'https://nittarab.dev';
   
   return [
     {
