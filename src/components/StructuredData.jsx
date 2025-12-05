@@ -1,6 +1,5 @@
 export default function StructuredData() {
   // Using @graph format with @id references for interconnected entities
-  // This is the best practice used by SEO experts like Max Woelfle
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
