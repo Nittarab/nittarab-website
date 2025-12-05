@@ -1,7 +1,7 @@
 'use server'
 
 import { request, gql } from 'graphql-request'
-import { unstable_cache } from 'next/cache'
+import { cache } from 'react'
 
 const TOKEN = process.env.GITHUB_TOKEN
 const GITHUB_API = 'https://api.github.com/graphql'
@@ -24,7 +24,7 @@ const query = gql`
   }
 `
 
-const getCachedContributions = unstable_cache(
+const getCachedContributions = cache(
   async (userName, fromISO, toISO) => {
     const variables = { userName, from: fromISO, to: toISO }
 
@@ -52,9 +52,7 @@ const getCachedContributions = unstable_cache(
     const preparedContributions = prepareContributionData(rawContributions, from, to)
 
     return { contributions: preparedContributions, totalContributions }
-  },
-  ['github-contributions'],
-  { revalidate: 3600 } // Cache for 1 hour (3600 seconds)
+  }
 )
 
 export async function fetchGithubContributions() {
@@ -71,7 +69,7 @@ export async function fetchGithubContributions() {
   }
 }
 
-function prepareContributionData(rawContributions, from, to) {
+function prepareContributionData(rawContributions, from, _to) {
   const preparedData = []
   const startDate = new Date(from)
 

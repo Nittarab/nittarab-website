@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function XCard() {
   return (
     <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-3 rounded-lg shadow-lg border border-white border-opacity-20 transform hover:scale-105 transition-all duration-300 relative overflow-hidden h-28 flex flex-col justify-between">

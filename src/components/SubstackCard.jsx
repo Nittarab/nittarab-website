@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function SubstackCard() {
   return (
     <div className="bg-gradient-to-br from-orange-100 to-yellow-100 p-3 rounded-lg shadow-lg border border-white border-opacity-20 transform hover:scale-105 transition-all duration-300 relative overflow-hidden h-28 flex flex-col justify-between">
