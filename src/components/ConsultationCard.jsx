@@ -71,7 +71,7 @@ export default function ConsultationCard() {
                 />
               </svg>
             </div>
-            <h3 className="text-2xl font-clash-display-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all">
+            <h3 className="text-2xl font-clash-display-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white group-hover:from-purple-400 group-hover:to-blue-400 transition-all duration-300">
               AI Engineering
             </h3>
           </div>

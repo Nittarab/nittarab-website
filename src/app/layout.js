@@ -81,9 +81,11 @@ export const metadata = {
   },
 };
 
+import Providers from "./providers";
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData />
         {/* Preload hero image for faster Largest Contentful Paint */}
@@ -101,7 +103,9 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
