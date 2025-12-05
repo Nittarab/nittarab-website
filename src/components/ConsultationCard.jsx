@@ -62,12 +62,12 @@ export default function ConsultationCard() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 className="text-xl font-clash-display-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all">
+            <h3 className="text-2xl font-clash-display-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all">
               AI Engineering
             </h3>
           </div>
           
-          <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-400 text-base mb-6 leading-relaxed">
             Transform your team with <span className="text-purple-400 font-medium">AI Agents</span>, <span className="text-blue-400 font-medium">Copilot</span>, and <span className="text-green-400 font-medium">Cursor</span>. 
             Expert guidance on context engineering and workflow optimization.
           </p>

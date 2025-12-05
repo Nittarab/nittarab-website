@@ -42,11 +42,11 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 text-gray-800 text-center lg:text-left">Patrick Barattin</h1>
-          <p className="text-base sm:text-lg font-clash-display-light text-gray-600 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 text-gray-900 text-center lg:text-left">Patrick Barattin</h1>
+          <h2 className="text-lg sm:text-xl font-clash-display-medium text-gray-800 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
             Senior Software Engineer | AI Engineering Consultant | Fintech Enthusiast
-          </p>
-          <p className="text-sm sm:text-base font-clash-display-regular text-gray-600 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+          </h2>
+          <p className="text-sm sm:text-base font-clash-display-regular text-gray-600 mb-4 sm:mb-5 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
             By day, I build conversational AI at on.com.
           </p>
           <p className="text-sm sm:text-base font-clash-display-regular text-gray-600 mb-8 sm:mb-10 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
