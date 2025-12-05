@@ -12,7 +12,7 @@ export default function GitHubCard({ className, onLoad }) {
   useEffect(() => {
     fetchGithubContributions().then(result => {
       setContributionData(result);
-      onLoad(); // Call onLoad when data is fetched
+      if (onLoad) onLoad();
     });
   }, [onLoad]);
 
@@ -56,7 +56,29 @@ export default function GitHubCard({ className, onLoad }) {
     }
   }, [hoverInfo]);
 
-  if (!contributionData) return null;
+  if (!contributionData) {
+    return (
+      <div className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 rounded-lg shadow-lg border border-white border-opacity-30 relative overflow-hidden ${className}`}>
+        <div className="flex items-center space-x-2 mb-4">
+          <div className="w-5 h-5 bg-gray-400/50 rounded-full animate-pulse"></div>
+          <div className="h-6 w-20 bg-gray-400/50 rounded animate-pulse"></div>
+        </div>
+        <div className="mb-4 relative">
+          <div className="grid grid-cols-[repeat(17,_minmax(0,1fr))] gap-1">
+            {[...Array(17)].map((_, colIndex) => (
+              <div key={colIndex} className="grid grid-rows-7 gap-1">
+                {[...Array(7)].map((_, rowIndex) => (
+                  <div key={rowIndex} className="aspect-square rounded-lg bg-gray-400/30 animate-pulse"></div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="h-5 w-48 bg-gray-400/50 rounded mb-3 animate-pulse"></div>
+        <div className="h-10 w-full bg-gray-400/50 rounded-full animate-pulse"></div>
+      </div>
+    )
+  }
 
   return (
     <div ref={containerRef} className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 rounded-lg shadow-lg border border-white border-opacity-30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden ${className}`}>

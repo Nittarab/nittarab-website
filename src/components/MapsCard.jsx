@@ -7,7 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoibml0dGFyYWIiLCJhIjoiY20waDM0cWlvMDZsNTJucXU3ZWN4YXVzaCJ9.wJU1s2WZm2HwYQe2LkT0SA'
 
-export default function MapsCard() {
+export default function MapsCard({ className }) {
   const mapContainer = useRef(null)
   const map = useRef(null)
   const marker = useRef(null)
@@ -49,6 +49,11 @@ export default function MapsCard() {
         setError('An error occurred while loading the map.')
       })
 
+      const resizeObserver = new ResizeObserver(() => {
+        map.current?.resize()
+      })
+      resizeObserver.observe(mapContainer.current)
+
     } catch (err) {
       console.error('Error initializing map:', err)
       setError('Failed to initialize the map.')
@@ -74,7 +79,7 @@ export default function MapsCard() {
   }
 
   return (
-    <div className="relative bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 hover:scale-105 transition-all h-full">
+    <div className={`relative bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 hover:scale-105 transition-all h-full ${className}`}>
       <div ref={mapContainer} className="w-full h-full rounded-lg" />
       <div className="absolute bottom-4 left-4 bg-white/70 px-2 py-1.5 text-sm shadow rounded-lg">
         <p>Zurich</p>

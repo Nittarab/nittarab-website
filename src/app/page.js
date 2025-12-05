@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import XCard from '../components/XCard'
 import SubstackCard from '../components/SubstackCard'
@@ -9,7 +8,6 @@ import MapsCard from '../components/MapsCard'
 import GitHubCard from '../components/GitHubCard'
 
 export default function Home() {
-  const [isGitHubCardLoaded, setIsGitHubCardLoaded] = useState(false)
   return (
     <div className="min-h-screen flex flex-col bg-white font-clash-display">
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 flex flex-col lg:flex-row items-start justify-between">
@@ -17,11 +15,12 @@ export default function Home() {
           <div className="mb-8 sm:mb-12 lg:mb-16 flex justify-center lg:justify-start">
             <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg">
               <Image
-                src="/nittarab_profile.jpg"
+                src="/nittarab_profile.webp"
                 alt="Patrick Barattin"
                 width={192}
                 height={192}
                 className="object-cover w-full h-full"
+                priority
               />
             </div>
           </div>
@@ -44,11 +43,11 @@ export default function Home() {
             <XCard />
             <SubstackCard />
             <LinkedInCard />
-            <div className="col-span-1">
-              {isGitHubCardLoaded && <MapsCard />}
+            <div className="col-span-1 h-full">
+              <MapsCard />
             </div>
             <div className="col-span-2">
-              <GitHubCard onLoad={() => setIsGitHubCardLoaded(true)} />
+              <GitHubCard />
             </div>
           </div>
 
@@ -56,8 +55,8 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
             <XCard />
             <SubstackCard />  
-            {isGitHubCardLoaded && <MapsCard className="col-span-1 sm:col-span-2" />}
-            <GitHubCard onLoad={() => setIsGitHubCardLoaded(true)} className="col-span-1 " />
+            <MapsCard className="col-span-1 sm:col-span-2" />
+            <GitHubCard className="col-span-1 " />
             <LinkedInCard className="col-span-1 sm:col-span-2" />
           </div>
         </div>
