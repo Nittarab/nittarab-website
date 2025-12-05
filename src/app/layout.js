@@ -12,7 +12,7 @@ export const metadata = {
     template: "%s | Patrick Barattin"
   },
   description: "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
-  keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI", "Web Development", "E-commerce"],
+  keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI", "Web Development", "E-commerce", "AI Engineering", "Context Engineering", "AI Agents", "GitHub Copilot", "Cursor", "Team Transformation"],
   authors: [{ name: "Patrick Barattin", url: siteUrl }],
   creator: "Patrick Barattin",
   publisher: "Patrick Barattin",

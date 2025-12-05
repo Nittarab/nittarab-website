@@ -6,3 +6,9 @@
   font-family: 'ClashDisplay-Variable', sans-serif;
   font-variation-settings: 'wght' var(--font-weight, 400);
 }
+
+body {
+  background-color: #ffffff;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
