@@ -1,10 +1,7 @@
-import { Inter } from "next/font/google";
 import Script from 'next/script';
 import StructuredData from '../components/StructuredData';
 import "./globals.css";
 import './clash-display.css'
-
-const inter = Inter({ subsets: ["latin"] });
 
 const siteUrl = "https://nittarab.dev";
 
@@ -89,7 +86,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
