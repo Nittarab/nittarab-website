@@ -23,7 +23,7 @@ export default [
     },
     plugins: {
       "@next/next": nextPlugin,
-      "react": reactPlugin,
+      react: reactPlugin,
       "react-hooks": reactHooksPlugin,
     },
     settings: {
@@ -37,7 +37,10 @@ export default [
       ...reactPlugin.configs.recommended.rules,
       ...reactPlugin.configs["jsx-runtime"].rules,
       ...reactHooksPlugin.configs.recommended.rules,
-      "no-unused-vars": ["error", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
+      "no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
       "react/prop-types": "off",
       // Allow setState in error handlers within effects
       "react-hooks/set-state-in-effect": "off",

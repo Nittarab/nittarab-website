@@ -1,7 +1,7 @@
-import Script from 'next/script';
-import StructuredData from '../components/StructuredData';
+import Script from "next/script";
+import StructuredData from "../components/StructuredData";
 import "./globals.css";
-import './clash-display.css'
+import "./clash-display.css";
 
 const siteUrl = "https://nittarab.dev";
 
@@ -9,10 +9,26 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Patrick Barattin - Software Engineer & Entrepreneur",
-    template: "%s | Patrick Barattin"
+    template: "%s | Patrick Barattin",
   },
-  description: "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
-  keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI", "Web Development", "E-commerce", "AI Engineering", "Context Engineering", "AI Agents", "GitHub Copilot", "Cursor", "Team Transformation"],
+  description:
+    "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
+  keywords: [
+    "Patrick Barattin",
+    "Software Engineer",
+    "Entrepreneur",
+    "Ruby on Rails",
+    "Fintech",
+    "AI",
+    "Web Development",
+    "E-commerce",
+    "AI Engineering",
+    "Context Engineering",
+    "AI Agents",
+    "GitHub Copilot",
+    "Cursor",
+    "Team Transformation",
+  ],
   authors: [{ name: "Patrick Barattin", url: siteUrl }],
   creator: "Patrick Barattin",
   publisher: "Patrick Barattin",
@@ -22,9 +38,9 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
@@ -32,7 +48,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
+    description:
+      "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
     type: "website",
     url: siteUrl,
     siteName: "Patrick Barattin",
@@ -51,7 +68,8 @@ export const metadata = {
     site: "@nittarab",
     creator: "@nittarab",
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
+    description:
+      "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
     images: ["/nittarab_profile.jpg"],
   },
   icons: {
@@ -59,13 +77,13 @@ export const metadata = {
     apple: "/favicon.ico",
   },
   other: {
-    'theme-color': '#ffffff',
+    "theme-color": "#ffffff",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">  
+    <html lang="en">
       <head>
         <StructuredData />
         {/* Preload hero image for faster Largest Contentful Paint */}
@@ -74,10 +92,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-WXVGFLXNJF"
         />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -86,9 +101,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

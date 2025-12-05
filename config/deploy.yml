@@ -9,14 +9,12 @@ servers:
   web:
     - 162.55.175.39
 
-
   # interval: 1s
   # timeout: 5s
   # start_period: 5s
   # retries: 3
 
-
-proxy: 
+proxy:
   healthcheck:
     path: /up
   app_port: 80
@@ -31,14 +29,13 @@ registry:
   username: Nittarab
 
   # Always use an access token rather than real password when possible.
-  password: 
-   - KAMAL_REGISTRY_PASSWORD
+  password:
+    - KAMAL_REGISTRY_PASSWORD
 
 # Configure builder setup.
 builder:
-  arch: 
-   - amd64
-
+  arch:
+    - amd64
 
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!

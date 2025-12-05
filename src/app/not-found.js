@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -12,8 +12,8 @@ export default function NotFound() {
             Oops! Page not found
           </h2>
           <p className="text-gray-600 font-clash-display-light mb-8 max-w-md mx-auto">
-            Looks like you&apos;ve ventured into uncharted territory. 
-            The page you&apos;re looking for doesn&apos;t exist or has been moved.
+            Looks like you&apos;ve ventured into uncharted territory. The page
+            you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
         <Link
@@ -23,13 +23,22 @@ export default function NotFound() {
           Back to Home
         </Link>
       </div>
-      
+
       {/* Fun animated elements */}
       <div className="mt-16 flex gap-4">
-        <div className="w-4 h-4 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-        <div className="w-4 h-4 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-        <div className="w-4 h-4 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+        <div
+          className="w-4 h-4 bg-blue-400 rounded-full animate-bounce"
+          style={{ animationDelay: "0ms" }}
+        />
+        <div
+          className="w-4 h-4 bg-purple-400 rounded-full animate-bounce"
+          style={{ animationDelay: "150ms" }}
+        />
+        <div
+          className="w-4 h-4 bg-orange-400 rounded-full animate-bounce"
+          style={{ animationDelay: "300ms" }}
+        />
       </div>
     </div>
-  )
+  );
 }

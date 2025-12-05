@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .font-clash-display-variable {
-  font-family: 'ClashDisplay-Variable', sans-serif;
-  font-variation-settings: 'wght' var(--font-weight, 400);
+  font-family: "ClashDisplay-Variable", sans-serif;
+  font-variation-settings: "wght" var(--font-weight, 400);
 }
 
 body {

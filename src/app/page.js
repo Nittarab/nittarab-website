@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import XCard from '../components/XCard'
-import SubstackCard from '../components/SubstackCard'
-import LinkedInCard from '../components/LinkedInCard'
-import MapsCard from '../components/MapsCard'
-import GitHubCard from '../components/GitHubCard'
-import ConsultationCard from '../components/ConsultationCard'
+import Image from "next/image";
+import { motion } from "framer-motion";
+import XCard from "../components/XCard";
+import SubstackCard from "../components/SubstackCard";
+import LinkedInCard from "../components/LinkedInCard";
+import MapsCard from "../components/MapsCard";
+import GitHubCard from "../components/GitHubCard";
+import ConsultationCard from "../components/ConsultationCard";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-}
+  show: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
   return (
@@ -42,19 +42,23 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 text-gray-900 text-center lg:text-left">Patrick Barattin</h1>
+          <h1 className="text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 text-gray-900 text-center lg:text-left">
+            Patrick Barattin
+          </h1>
           <h2 className="text-lg sm:text-xl font-clash-display-medium text-gray-800 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-            Senior Software Engineer | AI Engineering Consultant | Fintech Enthusiast
+            Senior Software Engineer | AI Engineering Consultant | Fintech
+            Enthusiast
           </h2>
           <p className="text-sm sm:text-base font-clash-display-regular text-gray-600 mb-4 sm:mb-5 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
             By day, I build conversational AI at on.com.
           </p>
           <p className="text-sm sm:text-base font-clash-display-regular text-gray-600 mb-8 sm:mb-10 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-            By night, I build AI agents and write about the future of software development on my Substack.
+            By night, I build AI agents and write about the future of software
+            development on my Substack.
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           animate="show"
@@ -71,7 +75,7 @@ export default function Home() {
             <motion.div variants={item} className="col-span-1">
               <LinkedInCard />
             </motion.div>
-            
+
             <motion.div variants={item} className="col-span-2">
               <GitHubCard />
             </motion.div>
@@ -99,7 +103,7 @@ export default function Home() {
               <GitHubCard />
             </motion.div>
             <motion.div variants={item} className="col-span-2">
-              <SubstackCard />  
+              <SubstackCard />
             </motion.div>
             <motion.div variants={item} className="col-span-2 h-64 sm:h-80">
               <MapsCard />
@@ -112,5 +116,5 @@ export default function Home() {
         © {new Date().getFullYear()} Patrick Barattin. All rights reserved.
       </footer>
     </div>
-  )
+  );
 }
