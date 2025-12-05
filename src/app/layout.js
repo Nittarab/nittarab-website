@@ -1,30 +1,68 @@
 import { Inter } from "next/font/google";
 import Script from 'next/script';
+import StructuredData from '../components/StructuredData';
 import "./globals.css";
 import './clash-display.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteUrl = "https://nittarab.dev";
+
 export const metadata = {
-  title: "Patrick Barattin - Software Engineer & Entrepreneur",
-  description: "Personal website of Patrick Barattin, software engineer and entrepreneur. Passionate Ruby on Rails developer, Fintech enthusiast, and AI explorer.",
-  keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI"],
-  author: "Patrick Barattin",
-  viewport: "width=device-width, initial-scale=1",
-  charset: "utf-8",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Patrick Barattin - Software Engineer & Entrepreneur",
+    template: "%s | Patrick Barattin"
+  },
+  description: "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
+  keywords: ["Patrick Barattin", "Software Engineer", "Entrepreneur", "Ruby on Rails", "Fintech", "AI", "Web Development", "E-commerce"],
+  authors: [{ name: "Patrick Barattin", url: siteUrl }],
+  creator: "Patrick Barattin",
+  publisher: "Patrick Barattin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer",
+    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
     type: "website",
-    url: "https://patrickbarattin.com", // Replace with your actual domain
-    image: "/nittarab_profile.jpg",
+    url: siteUrl,
+    siteName: "Patrick Barattin",
+    locale: "en_US",
+    images: [
+      {
+        url: "/nittarab_profile.jpg",
+        width: 400,
+        height: 400,
+        alt: "Patrick Barattin - Software Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@patrickbarattin", // Replace with your actual Twitter handle
+    site: "@nittarab",
+    creator: "@nittarab",
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
-    description: "Passionate Ruby on Rails developer | Fintech enthusiast | AI explorer",
-    image: "/nittarab_profile.jpg",
+    description: "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
+    images: ["/nittarab_profile.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  other: {
+    'theme-color': '#ffffff',
   },
 };
 
@@ -32,6 +70,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">  
       <head>
+        <StructuredData />
+        {/* Preload hero image for faster Largest Contentful Paint */}
+        <link rel="preload" as="image" href="/nittarab_profile.jpg" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-WXVGFLXNJF"
@@ -48,7 +89,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body>
+      <body className={inter.className}>
         {children}
       </body>
     </html>
