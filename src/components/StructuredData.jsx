@@ -45,7 +45,7 @@ export default function StructuredData() {
           "AI Development",
           "AI Engineering",
           "Prompt Engineering",
-          "Contex Engineering",
+          "Context Engineering",
           "TypeScript",
           "Node.js",
           "Next.js",
