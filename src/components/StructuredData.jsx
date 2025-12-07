@@ -26,7 +26,7 @@ export default function StructuredData() {
         "@id": "https://nittarab.dev/#person",
         name: "Patrick Barattin",
         url: "https://nittarab.dev/",
-        image: "https://nittarab.dev/nittarab_profile.jpg",
+        image: "https://nittarab.dev/nittarab_profile.webp",
         email: "p.barattin@gmail.com",
         jobTitle: "Software Engineer",
         description: "AI Engineer | Full-Stack Engineer | Fintech enthusiast",

@@ -20,6 +20,11 @@ proxy:
   app_port: 80
   ssl: true
   host: nittarab.dev
+  # Kamal 2.x: Optional run configuration for kamal-proxy
+  # run:
+  #   version: v0.9.0  # Specify proxy version (default is latest)
+  #   options: []       # Additional docker run options
+  #   metrics_port: 9090  # Prometheus metrics port
 
 # Credentials for your image host.
 registry:
@@ -40,10 +45,14 @@ builder:
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
-  # clear:
-  #   DB_HOST: 192.168.0.2
   secret:
     - GITHUB_TOKEN
+    - CDP_API_KEY_ID
+    - CDP_API_KEY_SECRET
+  clear:
+    X402_NETWORK: base
+    RESOURCE_WALLET_ADDRESS: "0x89764c3dEd721c29999A237cF935a34e1C8EDf97"
+    BASE_URL: "https://nittarab.dev"
 
 # Use a different ssh user than root
 # ssh:

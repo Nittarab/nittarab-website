@@ -56,7 +56,7 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/nittarab_profile.jpg",
+        url: "/nittarab_profile.webp",
         width: 400,
         height: 400,
         alt: "Patrick Barattin - Software Engineer",
@@ -70,7 +70,7 @@ export const metadata = {
     title: "Patrick Barattin - Software Engineer & Entrepreneur",
     description:
       "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
-    images: ["/nittarab_profile.jpg"],
+    images: ["/nittarab_profile.webp"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
       <head>
         <StructuredData />
         {/* Preload hero image for faster Largest Contentful Paint */}
-        <link rel="preload" as="image" href="/nittarab_profile.jpg" />
+        <link rel="preload" as="image" href="/nittarab_profile.webp" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-WXVGFLXNJF"

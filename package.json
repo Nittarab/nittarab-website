@@ -10,13 +10,15 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@coinbase/x402": "^0.7.3",
     "framer-motion": "^11.18.2",
     "graphql-request": "^7.3.5",
     "mapbox-gl": "^3.17.0",
     "next": "^16.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "self-update": "^0.0.1"
+    "self-update": "^0.0.1",
+    "x402-next": "^0.7.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
