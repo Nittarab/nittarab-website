@@ -97,11 +97,7 @@ export default function IdentityGlitch() {
       onMouseLeave={handleMouseLeave}
     >
       <motion.h1
-        className={`text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 transition-colors duration-300 ${
-          theme === "night"
-            ? "text-green-400 font-mono tracking-wider shadow-green-500/50 drop-shadow-md"
-            : "text-gray-900"
-        }`}
+        className="text-3xl sm:text-4xl font-clash-display-semibold mb-4 sm:mb-6 transition-colors duration-300 text-foreground dark:text-green-400 dark:font-mono dark:tracking-wider dark:shadow-green-500/50 dark:drop-shadow-md"
         layout
       >
         {text}

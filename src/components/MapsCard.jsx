@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import Image from "next/image";
 import "mapbox-gl/dist/mapbox-gl.css";
+import Card from "./ui/Card";
 
 const MAPBOX_ACCESS_TOKEN =
   "pk.eyJ1Ijoibml0dGFyYWIiLCJhIjoiY20waDM0cWlvMDZsNTJucXU3ZWN4YXVzaCJ9.wJU1s2WZm2HwYQe2LkT0SA";
@@ -79,11 +80,9 @@ export default function MapsCard({ className }) {
   }
 
   return (
-    <div
-      className={`relative bg-white/10 backdrop-blur-md rounded-lg shadow-lg border border-white/20 hover:scale-105 transition-all h-full ${className}`}
-    >
-      <div ref={mapContainer} className="w-full h-full rounded-lg" />
-      <div className="absolute bottom-4 left-4 bg-white/70 px-2 py-1.5 text-sm shadow rounded-lg">
+    <Card className={`h-full p-0 ${className}`}>
+      <div ref={mapContainer} className="w-full h-full" />
+      <div className="absolute bottom-4 left-4 bg-card/80 backdrop-blur-sm px-2 py-1.5 text-sm shadow rounded-lg border border-border text-foreground">
         <p>Zurich</p>
       </div>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -114,6 +113,6 @@ export default function MapsCard({ className }) {
           />
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
