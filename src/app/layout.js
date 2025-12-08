@@ -1,7 +1,20 @@
 import Script from "next/script";
+import localFont from "next/font/local";
 import StructuredData from "../components/StructuredData";
 import "./globals.css";
-import "./clash-display.css";
+
+const clashDisplay = localFont({
+  src: [
+    { path: "../../public/fonts/ClashDisplay-Extralight.woff2", weight: "200" },
+    { path: "../../public/fonts/ClashDisplay-Light.woff2", weight: "300" },
+    { path: "../../public/fonts/ClashDisplay-Regular.woff2", weight: "400" },
+    { path: "../../public/fonts/ClashDisplay-Medium.woff2", weight: "500" },
+    { path: "../../public/fonts/ClashDisplay-Semibold.woff2", weight: "600" },
+    { path: "../../public/fonts/ClashDisplay-Bold.woff2", weight: "700" },
+  ],
+  variable: "--font-clash-display",
+  display: "swap",
+});
 
 const siteUrl = "https://nittarab.dev";
 
@@ -85,7 +98,7 @@ import Providers from "./providers";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={clashDisplay.variable}>
       <head>
         <StructuredData />
         {/* Preload hero image for faster Largest Contentful Paint */}

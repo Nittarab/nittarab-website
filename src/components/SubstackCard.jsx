@@ -6,6 +6,7 @@ export default function SubstackCard() {
       <div className="flex items-center space-x-2">
         <div className="relative">
           <svg
+            aria-hidden="true"
             width="16"
             height="16"
             viewBox="0 0 24 24"

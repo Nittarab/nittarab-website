@@ -59,6 +59,7 @@ export default function ConsultationCard() {
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-muted rounded-lg border border-border group-hover:border-purple-500/50 transition-colors">
               <svg
+                aria-hidden="true"
                 className="w-6 h-6 text-purple-500 dark:text-purple-400"
                 fill="none"
                 stroke="currentColor"
@@ -103,6 +104,7 @@ export default function ConsultationCard() {
           >
             <span>Book Call</span>
             <svg
+              aria-hidden="true"
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"
@@ -126,6 +128,7 @@ export default function ConsultationCard() {
                   Copied!
                 </span>
                 <svg
+                  aria-hidden="true"
                   className="w-4 h-4 text-green-600 dark:text-green-400"
                   fill="none"
                   stroke="currentColor"
@@ -143,6 +146,7 @@ export default function ConsultationCard() {
               <>
                 <span>Email Me</span>
                 <svg
+                  aria-hidden="true"
                   className="w-4 h-4 text-muted-foreground"
                   fill="none"
                   stroke="currentColor"

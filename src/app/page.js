@@ -2,10 +2,16 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import XCard from "../components/XCard";
 import SubstackCard from "../components/SubstackCard";
 import LinkedInCard from "../components/LinkedInCard";
-import MapsCard from "../components/MapsCard";
+const MapsCard = dynamic(() => import("../components/MapsCard"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full w-full bg-white/10 rounded-lg animate-pulse" />
+  ),
+});
 import GitHubCard from "../components/GitHubCard";
 import WhoAmICard from "../components/WhoAmICard";
 import ConsultationCard from "../components/ConsultationCard";

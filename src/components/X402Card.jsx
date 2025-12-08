@@ -53,6 +53,7 @@ export default function X402Card() {
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-muted rounded-lg border border-border group-hover:border-green-500/50 transition-colors">
               <svg
+                aria-hidden="true"
                 className="w-6 h-6 text-green-500 dark:text-green-400"
                 fill="none"
                 stroke="currentColor"
@@ -93,6 +94,7 @@ export default function X402Card() {
           >
             <span>Book Call</span>
             <svg
+              aria-hidden="true"
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"
@@ -112,6 +114,7 @@ export default function X402Card() {
           >
             <span>Try X402 Live</span>
             <svg
+              aria-hidden="true"
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"

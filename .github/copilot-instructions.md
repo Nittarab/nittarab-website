@@ -1,43 +1,86 @@
 # Copilot Instructions for nittarab-website
 
-## Quick Facts
+## Project Overview
 
-- Portfolio built with Next.js 16 App Router + React 19 + Tailwind 3 + Framer Motion; package manager is pnpm (see [package.json](package.json)).
-- UI renders entirely through modular cards under [src/components](src/components); pages live in [src/app](src/app).
-- Day/night theme context from [src/app/providers.js](src/app/providers.js) must wrap any client component that needs `useTheme()`.
+Personal portfolio website for Patrick Barattin built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS 3**, and **Framer Motion**. Uses **pnpm** as the package manager.
 
-## Architecture & Data Flow
+## Architecture
 
-- [src/app/layout.js](src/app/layout.js) defines SEO metadata, GA scripts, and injects [src/components/StructuredData.jsx](src/components/StructuredData.jsx); keep schema.org graph up to date with new entities.
-- [src/app/page.js](src/app/page.js) orchestrates the hero column + animated card grid; new cards should plug into the Framer Motion `container`/`item` variants to participate in staggered reveals.
-- Server-only GitHub stats come from [src/app/actions/fetchGithubContributions.js](src/app/actions/fetchGithubContributions.js) via `graphql-request` and `react` `cache()`; always call from client components with `useEffect` and keep `GITHUB_TOKEN` populated.
-- `/secret` is protected by X402 micropayments in [src/middleware.js](src/middleware.js); setting `RESOURCE_WALLET_ADDRESS` and `X402_NETWORK` is required before that route works locally or in prod.
-- Mapbox-vis data lives entirely inside [src/components/MapsCard.jsx](src/components/MapsCard.jsx); it imports `mapbox-gl/dist/mapbox-gl.css`, uses a custom immutable style, and animates planes via `setInterval`—clean up intervals and map instances in `useEffect` cleanups when modifying it.
+### Directory Structure
 
-## Styling & Interaction
+- `src/app/` — Next.js App Router pages and server actions
+- `src/components/` — Reusable React components (all `.jsx` files)
+- `src/app/actions/` — Server actions (e.g., GitHub GraphQL fetches)
+- `config/deploy.yml` — Kamal deployment configuration
 
-- Tailwind config ([tailwind.config.js](tailwind.config.js)) declares `font-clash-display-*` stacks and gradient helpers; always prefer these classes over ad-hoc fonts.
-- Theme-aware classes follow the pattern in [src/app/page.js](src/app/page.js) and `WhoAmICard`—branch on `theme === "night"` vs `day` and keep transitions at `duration-300` or `duration-500` for consistency.
-- Cards typically include `hover:scale-105`, rounded corners, subtle borders, and gradient overlays (see [src/components/WhoAmICard.jsx](src/components/WhoAmICard.jsx)); replicate that rhythm for new cards.
-- Motion primitives come from Framer Motion; reuse the shared `container`/`item` variants instead of redefining haphazard animation timings.
+### Key Patterns
 
-## External Integrations
+- **Client components**: Most UI components use `"use client"` directive for interactivity (Framer Motion animations, theme context)
+- **Theme system**: Day/night theme via React Context in [providers.js](src/app/providers.js) — access with `useTheme()` hook
+- **Server actions**: Data fetching (GitHub contributions) uses `"use server"` with React cache in [fetchGithubContributions.js](src/app/actions/fetchGithubContributions.js)
+- **X402 payments**: Middleware handles micropayments for `/secret` route via `x402-next` package
 
-- Google Analytics (`G-WXVGFLXNJF`) loads in layout via `next/script`; if you add more scripts, keep them inside `<head>` in [src/app/layout.js](src/app/layout.js) and prefer `strategy="afterInteractive"`.
-- Mapbox token and style IDs are hard-coded today; if you swap them, confirm they are public-safe or move them to env variables consumed in `MapsCard` (remember `use client`).
-- GitHub GraphQL queries require the `GITHUB_TOKEN` env var plus outbound network from the server runtime; failures bubble up to the console—wrap new consumers in try/catch and surface skeleton states like [src/components/GitHubCard.jsx](src/components/GitHubCard.jsx).
-- GA structured data is delivered via `dangerouslySetInnerHTML` inside [src/components/StructuredData.jsx](src/components/StructuredData.jsx); when extending it, keep the `@graph` IDs stable.
+## Design System: Neo-Organic Fusion
+
+Follow these visual principles for all UI work:
+
+- **Card-based interface**: Content organized in modular cards (see existing `*Card.jsx` components)
+- **Soft gradient backgrounds**: `bg-gradient-to-br from-gray-200 to-gray-300` pattern
+- **Typography**: Use `font-clash-display-*` variants (regular, medium, semibold, bold) — never generic sans-serif
+- **Theme-aware styling**: Always support both themes with conditional classes:
+  ```jsx
+  className={`${theme === "night" ? "bg-black text-green-400" : "bg-white text-gray-800"}`}
+  ```
+- **Micro-interactions**: `hover:scale-105`, `transition-all duration-300`, staggered Framer Motion animations
+- **Conscious whitespace**: Generous padding (`p-4`, `p-6`, `p-8`) and spacing (`gap-4`, `gap-6`)
 
 ## Developer Workflow
 
-- Common scripts: `pnpm dev` (Turbopack), `pnpm build`, `pnpm start`, `pnpm lint`, `pnpm format`.
-- `pnpm` overrides in [package.json](package.json) pin transitive deps (glob, js-yaml); avoid npm/yarn to ensure overrides stick.
-- Assets (fonts, profile shots, plane images) live under [public](public); always provide explicit `width`/`height` to `next/image`.
-- Deployment uses Kamal ([config/deploy.yml](config/deploy.yml)) targeting `nittarab.dev` with `/up` as health check; keep Docker image metadata in sync when adding services.
+### Commands
 
-## Implementation Gotchas
+```bash
+pnpm dev      # Development server (Turbopack enabled)
+pnpm build    # Production build (standalone output)
+pnpm lint     # ESLint check
+pnpm format   # Prettier formatting
+```
 
-- Never drop `"use client"` from interactive components (cards, theme provider, Mapbox, Identity effects); app router will promote them automatically if omitted, but hydration mismatches are likely.
-- Middleware runs on the Edge matcher for `/secret/:path*`; logging in [src/middleware.js](src/middleware.js) is noisy—trim or guard logs if you add more routes.
-- Mapbox CSS is a side-effect import; if you lazy-load the card, ensure the CSS still executes on the client.
-- When creating new 3D or three.js experiences, follow .cursorrules guidance: include `"use client"`, no placeholder comments, and provide actual MVP implementations before asking for user confirmation.
+### Deployment
+
+- Deployed via **Kamal** to `nittarab.dev`
+- Docker image pushed to `ghcr.io/nittarab/nittarab-website`
+- Health check endpoint: `/up`
+- Secrets managed via `.env` and `kamal env push`
+
+### Environment Variables
+
+- `GITHUB_TOKEN` — GitHub GraphQL API access
+- `RESOURCE_WALLET_ADDRESS` — X402 payment recipient wallet
+- `X402_NETWORK` — Payment network (`base-sepolia` or `base`)
+
+## Code Conventions
+
+### Component Structure
+
+- One component per file in `src/components/`
+- Use `.jsx` extension for components, `.js` for utilities/pages
+- Export single default component matching filename
+
+### Styling Patterns
+
+- Tailwind utility classes inline (no CSS modules)
+- Custom font classes defined in [tailwind.config.js](tailwind.config.js)
+- Responsive: Mobile-first with `sm:`, `lg:` breakpoints
+
+### Important Rules
+
+- **Never use code placeholders** like `// ... existing code ...` — write complete code
+- **Unused variables**: Prefix with `_` to avoid lint errors (`_unused`)
+- **3D/Three.js components**: Must include `"use client"` directive
+- **Images**: Use `next/image` with explicit `width`/`height` or `fill`
+
+## External Integrations
+
+- **GitHub GraphQL API**: Fetches contribution calendar data
+- **Mapbox GL**: Interactive map in MapsCard
+- **Google Analytics**: `G-WXVGFLXNJF` tracking ID
