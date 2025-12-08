@@ -111,18 +111,18 @@ export default function Home() {
           >
             <X402Card />
           </motion.div>
+          <motion.div variants={item} className="col-span-1 lg:row-span-2">
+            <GitHubCard />
+          </motion.div>
+
+          <motion.div variants={item} className="col-span-2 lg:col-span-2">
+            <SubstackCard />
+          </motion.div>
           <motion.div
             variants={item}
             className="col-span-2 lg:col-span-1 h-64 sm:h-auto lg:h-full min-h-[16rem]"
           >
             <MapsCard />
-          </motion.div>
-
-          <motion.div variants={item} className="col-span-2 lg:col-span-1">
-            <GitHubCard />
-          </motion.div>
-          <motion.div variants={item} className="col-span-2 lg:col-span-3">
-            <SubstackCard />
           </motion.div>
         </motion.div>
       </main>
