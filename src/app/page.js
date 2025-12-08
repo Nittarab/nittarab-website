@@ -9,6 +9,7 @@ import MapsCard from "../components/MapsCard";
 import GitHubCard from "../components/GitHubCard";
 import WhoAmICard from "../components/WhoAmICard";
 import ConsultationCard from "../components/ConsultationCard";
+import X402Card from "../components/X402Card";
 import IdentityGlitch from "../components/IdentityGlitch";
 import CyberOverlay from "../components/CyberOverlay";
 import { useTheme } from "./providers";
@@ -97,13 +98,16 @@ export default function Home() {
               <LinkedInCard />
             </motion.div>
 
-            <motion.div variants={item} className="col-span-2">
-              <GitHubCard />
+            <motion.div variants={item} className="col-span-2 row-span-2">
+              <X402Card />
             </motion.div>
             <motion.div variants={item} className="col-span-1 h-full">
               <MapsCard />
             </motion.div>
 
+            <motion.div variants={item} className="col-span-1">
+              <GitHubCard />
+            </motion.div>
             <motion.div variants={item} className="col-span-3">
               <SubstackCard />
             </motion.div>
@@ -125,6 +129,9 @@ export default function Home() {
             </motion.div>
             <motion.div variants={item} className="col-span-2">
               <GitHubCard />
+            </motion.div>
+            <motion.div variants={item} className="col-span-2">
+              <X402Card />
             </motion.div>
             <motion.div variants={item} className="col-span-2">
               <SubstackCard />
