@@ -39,7 +39,7 @@ export default function Home() {
       <CyberOverlay />
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 flex flex-col lg:flex-row items-start justify-between gap-12 relative z-10">
         <div className="w-full lg:w-1/3 lg:sticky lg:top-24">
-          <div className="mb-8 sm:mb-12 lg:mb-16 flex justify-center lg:justify-start">
+          <div className="mb-6 sm:mb-10 lg:mb-12 flex justify-start">
             <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg border-4 border-card">
               <Image
                 src="/nittarab_profile.webp"
@@ -55,21 +55,21 @@ export default function Home() {
           <IdentityGlitch />
 
           <h2
-            className={`text-lg sm:text-xl font-clash-display-medium mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 text-center lg:text-left transition-colors duration-300 text-foreground`}
+            className={`text-lg sm:text-xl font-clash-display-regular mb-4 sm:mb-6 max-w-md text-left transition-colors duration-300 text-muted-foreground`}
           >
             {theme === "day"
               ? "Senior Software Engineer | AI Engineering Consultant | Fintech Enthusiast"
               : "Product Engineer | Serial Builder | Night Owl"}
           </h2>
           <p
-            className={`text-sm sm:text-base font-clash-display-regular mb-4 sm:mb-5 max-w-md mx-auto lg:mx-0 text-center lg:text-left transition-colors duration-300 text-muted-foreground`}
+            className={`text-base sm:text-lg font-clash-display-regular mb-4 sm:mb-5 max-w-md text-left transition-colors duration-300 text-foreground/80`}
           >
             {theme === "day"
               ? "By day, I build conversational AI at on.com."
               : "By night, I ship products and explore new interesting tech."}
           </p>
           <p
-            className={`text-sm sm:text-base font-clash-display-regular mb-8 sm:mb-10 max-w-md mx-auto lg:mx-0 text-center lg:text-left transition-colors duration-300 text-muted-foreground`}
+            className={`text-base sm:text-lg font-clash-display-regular mb-8 sm:mb-10 max-w-md text-left transition-colors duration-300 text-foreground/80`}
           >
             {theme === "day"
               ? "By night, I build AI agents and write about the future of software development on my Substack."
