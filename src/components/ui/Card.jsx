@@ -1,8 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default function Card({ children, className = "" }) {
+const Card = forwardRef(({ children, className = "", ...props }, ref) => {
   return (
     <div
+      ref={ref}
       className={`
         relative overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-500
         bg-white/60 backdrop-blur-xl shadow-bento ring-1 ring-black/5 text-card-foreground
@@ -10,8 +11,13 @@ export default function Card({ children, className = "" }) {
         dark:bg-card dark:bg-opacity-70 dark:backdrop-blur-md dark:shadow-glow dark:ring-0 dark:border dark:border-border
         ${className}
       `}
+      {...props}
     >
       {children}
     </div>
   );
-}
+});
+
+Card.displayName = "Card";
+
+export default Card;

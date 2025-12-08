@@ -113,7 +113,7 @@ export default function Home() {
           </motion.div>
           <motion.div
             variants={item}
-            className="col-span-2 lg:col-span-1 h-64 sm:h-auto lg:h-full"
+            className="col-span-2 lg:col-span-1 h-64 sm:h-auto lg:h-full min-h-[16rem]"
           >
             <MapsCard />
           </motion.div>

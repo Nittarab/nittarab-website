@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { fetchGithubContributions } from "../app/actions/fetchGithubContributions";
+import Card from "./ui/Card";
 
 export default function GitHubCard({ className, onLoad }) {
   const [contributionData, setContributionData] = useState(null);
@@ -58,8 +59,8 @@ export default function GitHubCard({ className, onLoad }) {
 
   if (!contributionData) {
     return (
-      <div
-        className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 rounded-lg shadow-lg border border-white border-opacity-30 relative overflow-hidden ${className}`}
+      <Card
+        className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 border border-white border-opacity-30 ${className}`}
       >
         <div className="flex items-center space-x-2 mb-4">
           <div className="w-5 h-5 bg-gray-400/50 rounded-full animate-pulse"></div>
@@ -81,14 +82,14 @@ export default function GitHubCard({ className, onLoad }) {
         </div>
         <div className="h-5 w-48 bg-gray-400/50 rounded mb-3 animate-pulse"></div>
         <div className="h-10 w-full bg-gray-400/50 rounded-full animate-pulse"></div>
-      </div>
+      </Card>
     );
   }
 
   return (
-    <div
+    <Card
       ref={containerRef}
-      className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 rounded-lg shadow-lg border border-white border-opacity-30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden ${className}`}
+      className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 border border-white border-opacity-30 ${className}`}
     >
       <div className="flex items-center space-x-2 mb-4">
         <div className="relative">
@@ -144,6 +145,6 @@ export default function GitHubCard({ className, onLoad }) {
         <span className="relative z-10 text-base">Follow</span>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
       </a>
-    </div>
+    </Card>
   );
 }
