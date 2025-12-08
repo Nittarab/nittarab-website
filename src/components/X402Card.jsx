@@ -73,15 +73,24 @@ export default function X402Card() {
           </div>
 
           <p className="text-muted-foreground text-base mb-6 leading-relaxed">
-            Monetize your content with{" "}
+            Adopt the standard for{" "}
             <span className="text-green-600 dark:text-green-400 font-medium">
-              micropayments
+              agent-to-agent, machine-to-machine payment
             </span>
-            . Implement{" "}
+            . Already used by{" "}
             <span className="text-emerald-600 dark:text-emerald-400 font-medium">
-              X402 Protocol
-            </span>{" "}
-            for seamless pay-per-access — no subscriptions, no intermediaries.
+              Google Agent
+            </span>
+            , this protocol unlocks seamless monetization. Learn more at{" "}
+            <a
+              href="https://x402.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground underline decoration-green-500/50 hover:decoration-green-500 transition-all"
+            >
+              x402.org
+            </a>
+            .
           </p>
         </div>
 
