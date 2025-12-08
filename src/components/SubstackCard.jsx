@@ -22,7 +22,8 @@ export default function SubstackCard() {
           </p>
         </div>
         <p className="text-base text-gray-700 dark:text-gray-300 font-clash-display-regular mb-4">
-          I write about AI agents, software engineering, and the future of tech. Join the conversation.
+          I write about AI agents, software engineering, and the future of tech.
+          Join the conversation.
         </p>
       </div>
       <a
