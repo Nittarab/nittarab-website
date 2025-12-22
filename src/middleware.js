@@ -27,7 +27,7 @@ const x402Middleware = paymentMiddleware(
   payTo,
   {
     "/secret": {
-      price: "$0.01",
+      price: "$0.10",
       network: network,
       config: {
         description: "Access to The Little Secret",
