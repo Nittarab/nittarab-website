@@ -136,15 +136,23 @@ export default function GitHubCard({ className, onLoad }) {
       <div className="text-base text-gray-700 mb-3 font-clash-display-regular">
         Total contributions: {contributionData.totalContributions} in 17 weeks
       </div>
-      <a
-        href="https://github.com/nittarab"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full bg-gradient-to-r from-gray-700 to-gray-900 text-white text-center py-2 px-4 rounded-full font-clash-display-medium hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
-      >
-        <span className="relative z-10 text-base">Follow</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-      </a>
+      <div className="space-y-2">
+        <a
+          href="/skyline"
+          className="block w-full rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-4 py-2 text-center font-clash-display-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          Explore my 3D skyline
+        </a>
+        <a
+          href="https://github.com/nittarab"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative block w-full overflow-hidden rounded-full bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 text-center font-clash-display-medium text-white transition-all duration-300 hover:shadow-lg"
+        >
+          <span className="relative z-10 text-base">Follow on GitHub</span>
+          <div className="absolute inset-0 origin-left scale-x-0 transform bg-gradient-to-r from-gray-800 to-black transition-transform duration-300 group-hover:scale-x-100"></div>
+        </a>
+      </div>
     </Card>
   );
 }
