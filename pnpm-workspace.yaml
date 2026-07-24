@@ -1,0 +1,20 @@
+packages:
+  - "."
+
+overrides:
+  "js-yaml@>=4.0.0 <4.1.1": ">=4.1.1"
+  "glob@>=10.2.0 <10.5.0": ">=10.5.0"
+
+allowBuilds:
+  "@coinbase/x402": false
+  bufferutil: false
+  keccak: false
+  sharp: false
+  "utf-8-validate": false
+
+# These exact transitive versions are required by @react-three/drei and are
+# integrity-pinned in pnpm-lock.yaml. Keep pnpm's release-age policy enabled
+# for every other package.
+minimumReleaseAgeExclude:
+  - "troika-three-text@0.52.5"
+  - "troika-three-utils@0.52.5"
