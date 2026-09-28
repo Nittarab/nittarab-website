@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import XCard from "../components/XCard";
@@ -14,6 +15,7 @@ const MapsCard = dynamic(() => import("../components/MapsCard"), {
 });
 import GitHubCard from "../components/GitHubCard";
 import WhoAmICard from "../components/WhoAmICard";
+import WeftLabsCard from "../components/WeftLabsCard";
 import ConsultationCard from "../components/ConsultationCard";
 import X402Card from "../components/X402Card";
 import IdentityGlitch from "../components/IdentityGlitch";
@@ -64,23 +66,29 @@ export default function Home() {
             className={`text-lg sm:text-xl font-clash-display-regular mb-4 sm:mb-6 max-w-md text-left transition-colors duration-300 text-muted-foreground`}
           >
             {theme === "day"
-              ? "Senior Software Engineer | AI Engineering Consultant | Fintech Enthusiast"
+              ? "Founder, Weft Labs | AI agents | Product engineering"
               : "Product Engineer | Serial Builder | Night Owl"}
           </h2>
           <p
             className={`text-base sm:text-lg font-clash-display-regular mb-4 sm:mb-5 max-w-md text-left transition-colors duration-300 text-foreground/80`}
           >
             {theme === "day"
-              ? "By day, I build conversational AI at on.com."
-              : "By night, I ship products and explore new interesting tech."}
+              ? "I build Weft, so AI agents can reach data, software, and services through one integration."
+              : "By night, I ship Weft and explore new interesting tech."}
           </p>
           <p
             className={`text-base sm:text-lg font-clash-display-regular mb-8 sm:mb-10 max-w-md text-left transition-colors duration-300 text-foreground/80`}
           >
             {theme === "day"
-              ? "By night, I build AI agents and write about the future of software development on my Substack."
+              ? "Previously I built conversational commerce at On, and ecommerce systems before that."
               : "Turning ideas into reality. One commit at a time."}
           </p>
+          <Link
+            href="/cv"
+            className="inline-flex rounded-full border border-border px-4 py-2 font-clash-display-medium text-sm text-foreground transition hover:border-primary hover:text-primary"
+          >
+            Read my CV
+          </Link>
         </div>
 
         <motion.div
@@ -89,6 +97,9 @@ export default function Home() {
           animate="show"
           className="w-full lg:w-2/3 grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto lg:mx-0"
         >
+          <motion.div variants={item} className="col-span-2 lg:col-span-3">
+            <WeftLabsCard />
+          </motion.div>
           <motion.div variants={item} className="col-span-2 lg:col-span-3">
             <WhoAmICard />
           </motion.div>

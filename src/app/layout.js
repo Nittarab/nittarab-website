@@ -21,11 +21,11 @@ const siteUrl = "https://nittarab.dev";
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Patrick Barattin - Software Engineer & Entrepreneur",
+    default: "Patrick Barattin - Founder, Weft Labs",
     template: "%s | Patrick Barattin",
   },
   description:
-    "Personal website of Patrick Barattin, software engineer and entrepreneur. AI Agent Developer, Full-Stack Engineer (TypeScript, Next.js, NestJS), and Fintech enthusiast.",
+    "Patrick Barattin, founder of Weft Labs. Building the integration layer for AI agents, previously senior software engineer at On.",
   keywords: [
     "Patrick Barattin",
     "Software Engineer",
@@ -60,9 +60,9 @@ export const metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Patrick Barattin - Software Engineer & Entrepreneur",
+    title: "Patrick Barattin - Founder, Weft Labs",
     description:
-      "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
+      "Founder of Weft Labs. AI agents, product engineering, and pay-per-use access for software and data.",
     type: "website",
     url: siteUrl,
     siteName: "Patrick Barattin",
@@ -80,9 +80,9 @@ export const metadata = {
     card: "summary_large_image",
     site: "@nittarab",
     creator: "@nittarab",
-    title: "Patrick Barattin - Software Engineer & Entrepreneur",
+    title: "Patrick Barattin - Founder, Weft Labs",
     description:
-      "AI Agent Developer | Full-Stack Engineer (TypeScript, Next.js, NestJS) | Fintech enthusiast",
+      "Founder of Weft Labs. AI agents, product engineering, and pay-per-use access for software and data.",
     images: ["/nittarab_profile.webp"],
   },
   icons: {
