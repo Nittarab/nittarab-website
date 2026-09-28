@@ -28,12 +28,14 @@ export default function StructuredData() {
         url: "https://nittarab.dev/",
         image: "https://nittarab.dev/nittarab_profile.webp",
         email: "p.barattin@gmail.com",
-        jobTitle: "Software Engineer",
-        description: "AI Engineer | Full-Stack Engineer | Fintech enthusiast",
+        jobTitle: "Founder",
+        description:
+          "Founder of Weft Labs. Builds the integration layer for AI agents to reach data, software, and services.",
         worksFor: {
-          "@id": "https://www.on.com/#organization",
+          "@id": "https://weftlabs.com/#organization",
         },
         sameAs: [
+          "https://weftlabs.com",
           "https://x.com/nittarab",
           "https://www.linkedin.com/in/patrick-barattin/",
           "https://github.com/nittarab",
@@ -58,15 +60,12 @@ export default function StructuredData() {
       },
       {
         "@type": "Organization",
-        "@id": "https://www.on.com/#organization",
-        name: "On",
-        url: "https://www.on.com/",
+        "@id": "https://weftlabs.com/#organization",
+        name: "Weft Labs",
+        url: "https://weftlabs.com",
         description:
-          "On Holding AG is a Swiss athletic shoe and performance sportswear company headquartered in Zürich, Switzerland.",
-        sameAs: [
-          "https://www.on.com/",
-          "https://en.wikipedia.org/wiki/On_(company)",
-        ],
+          "Weft Labs builds the platform that lets AI agents access external data, software, and services through one integration.",
+        sameAs: ["https://weftlabs.com"],
       },
     ],
   };

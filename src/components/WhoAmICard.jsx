@@ -20,7 +20,7 @@ export default function WhoAmICard() {
               Who Am I on AI?
             </h3>
             <span className="px-3 py-1 text-xs font-clash-display-medium rounded-full transition-colors bg-blue-100 text-blue-600 dark:bg-green-900/30 dark:text-green-400 dark:border dark:border-green-800">
-              New Project
+Project
             </span>
           </div>
 
