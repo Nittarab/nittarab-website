@@ -43,7 +43,7 @@ export default function Home() {
       className={`min-h-screen flex flex-col transition-colors duration-500 bg-background text-foreground font-clash-display`}
     >
       <CyberOverlay />
-      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 flex flex-col lg:flex-row items-start justify-between gap-12 relative z-10">
+      <main className="grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 flex flex-col lg:flex-row items-start justify-between gap-12 relative z-10">
         <div className="w-full lg:w-1/3 lg:sticky lg:top-24">
           <div className="mb-6 sm:mb-10 lg:mb-12 flex justify-start">
             <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg border-4 border-card">

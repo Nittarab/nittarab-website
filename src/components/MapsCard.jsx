@@ -6,8 +6,7 @@ import Image from "next/image";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Card from "./ui/Card";
 
-const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1Ijoibml0dGFyYWIiLCJhIjoiY20waDM0cWlvMDZsNTJucXU3ZWN4YXVzaCJ9.wJU1s2WZm2HwYQe2LkT0SA";
+const MAPBOX_ACCESS_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function MapsCard({ className }) {
   const mapContainer = useRef(null);
@@ -17,6 +16,10 @@ export default function MapsCard({ className }) {
   const [planePosition, setPlanePosition] = useState({ x: -10, y: 110 });
 
   useEffect(() => {
+    if (!MAPBOX_ACCESS_TOKEN) {
+      setError("Mapbox token is not configured.");
+      return;
+    }
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
 
     try {
@@ -35,7 +38,7 @@ export default function MapsCard({ className }) {
           <div class="relative h-7 w-7">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#679BFF] opacity-50" style="animation-duration: 2s;"></span>
             <span class="relative inline-flex rounded-full h-7 w-7 bg-white items-center justify-center">
-              <span class="absolute inset-[2px] rounded-full border border-white border-opacity-50"></span>
+              <span class="absolute inset-[2px] rounded-full border border-white/50"></span>
               <span class="absolute inset-[4px] rounded-full bg-[#679BFF]"></span>
             </span>
           </div>

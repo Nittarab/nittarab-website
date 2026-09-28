@@ -6,12 +6,6 @@ const highlights = [
   "402, the forgotten status code, finally has a real job.",
 ];
 
-const takeaways = [
-  "Micropayments feel effortless when wallets and browsers speak the same language.",
-  "The paywall disappears the moment value flows — no subscriptions, no lock-in.",
-  "Protocols > platforms. Keep ownership of your audience *and* your revenue.",
-];
-
 export const metadata = {
   title: "Access Granted | Nittarab",
   description: "Exclusive content unlocked via X402 protocol.",
@@ -27,7 +21,7 @@ export default function SecretPage() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-3xl space-y-12">
           {/* Hero Section */}
-          <section className="relative rounded-3xl bg-gradient-to-b from-[#041b11] to-black p-8 sm:p-10 shadow-2xl ring-1 ring-green-900/40 overflow-hidden">
+          <section className="relative rounded-3xl bg-linear-to-b from-[#041b11] to-black p-8 sm:p-10 shadow-2xl ring-1 ring-green-900/40 overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-20">
               <svg
                 width="100"
@@ -52,12 +46,12 @@ export default function SecretPage() {
               </p>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-clash-display-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-100 to-green-400/80 mb-6">
+            <h1 className="text-4xl sm:text-6xl font-clash-display-semibold leading-tight text-transparent bg-clip-text bg-linear-to-r from-green-100 to-green-400/80 mb-6">
               The Little Secret
             </h1>
 
             <p className="text-lg sm:text-xl text-green-200/70 leading-relaxed max-w-2xl">
-              You didn't just pay. You performed a{" "}
+              You didn&apos;t just pay. You performed a{" "}
               <span className="text-green-400 font-semibold">
                 cryptographically verifiable handshake
               </span>

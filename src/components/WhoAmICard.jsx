@@ -12,7 +12,7 @@ export default function WhoAmICard() {
       className="block h-full group"
     >
       <Card className="h-full p-6">
-        <div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-green-900/10 dark:to-blue-900/10"></div>
+        <div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-green-900/10 dark:to-blue-900/10"></div>
 
         <div className="flex flex-col h-full relative z-10">
           <div className="flex items-center justify-between mb-4">
@@ -28,7 +28,7 @@ export default function WhoAmICard() {
             Discover what models know about brand and product.
           </p>
 
-          <div className="relative w-full aspect-[2/1] rounded-xl overflow-hidden shadow-inner border transition-colors mt-auto border-muted group-hover:border-primary/50">
+          <div className="relative w-full aspect-2/1 rounded-xl overflow-hidden shadow-inner border transition-colors mt-auto border-muted group-hover:border-primary/50">
             <Image
               src="/whoami_preview.webp"
               alt="Who Am I on AI Preview"

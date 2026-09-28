@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Patrick Barattin built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS 3**, and **Framer Motion**. Uses **pnpm** as the package manager.
+Personal portfolio website for Patrick Barattin built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS 4**, and **Framer Motion**. Uses **pnpm** as the package manager and **Biome** for linting and formatting.
 
 ## Architecture
 
@@ -18,14 +18,14 @@ Personal portfolio website for Patrick Barattin built with **Next.js 16 (App Rou
 - **Client components**: Most UI components use `"use client"` directive for interactivity (Framer Motion animations, theme context)
 - **Theme system**: Day/night theme via React Context in [providers.js](src/app/providers.js) — access with `useTheme()` hook
 - **Server actions**: Data fetching (GitHub contributions) uses `"use server"` with React cache in [fetchGithubContributions.js](src/app/actions/fetchGithubContributions.js)
-- **X402 payments**: Middleware handles micropayments for `/secret` route via `x402-next` package
+- **X402 payments**: `src/proxy.js` handles micropayments for `/secret` via `x402-next`
 
 ## Design System: Neo-Organic Fusion
 
 Follow these visual principles for all UI work:
 
 - **Card-based interface**: Content organized in modular cards (see existing `*Card.jsx` components)
-- **Soft gradient backgrounds**: `bg-gradient-to-br from-gray-200 to-gray-300` pattern
+- **Soft gradient backgrounds**: `bg-linear-to-br from-gray-200 to-gray-300` pattern
 - **Typography**: Use `font-clash-display-*` variants (regular, medium, semibold, bold) — never generic sans-serif
 - **Theme-aware styling**: Always support both themes with conditional classes:
   ```jsx
@@ -41,8 +41,8 @@ Follow these visual principles for all UI work:
 ```bash
 pnpm dev      # Development server (Turbopack enabled)
 pnpm build    # Production build (standalone output)
-pnpm lint     # ESLint check
-pnpm format   # Prettier formatting
+pnpm lint     # Biome lint, format, and import check
+pnpm format   # Biome formatting
 ```
 
 ### Deployment
@@ -56,7 +56,9 @@ pnpm format   # Prettier formatting
 
 - `GITHUB_TOKEN` — GitHub GraphQL API access
 - `RESOURCE_WALLET_ADDRESS` — X402 payment recipient wallet
-- `X402_NETWORK` — Payment network (`base-sepolia` or `base`)
+- `X402_NETWORK` — Payment network (`base` or `base-sepolia`)
+- `X402_FACILITATOR_URL` — Weft facilitator (`https://x402.weft.network` on Base, staging for Sepolia)
+- `WEFT_FACILITATOR_API_KEY` — Weft organization key, required to settle
 
 ## Code Conventions
 
