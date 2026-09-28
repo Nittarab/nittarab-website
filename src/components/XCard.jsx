@@ -2,7 +2,7 @@ import Card from "./ui/Card";
 
 export default function XCard() {
   return (
-    <Card className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 h-28 flex flex-col justify-between">
+    <Card className="bg-linear-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 h-28 flex flex-col justify-between">
       <div className="flex items-center space-x-2">
         <div className="relative">
           <svg
@@ -24,10 +24,10 @@ export default function XCard() {
         href="https://x.com/intent/user?screen_name=nittarab"
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-2 rounded-full font-clash-display-medium hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
+        className="block w-full bg-linear-to-r from-blue-500 to-purple-500 text-white text-center py-2 rounded-full font-clash-display-medium hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
       >
         <span className="relative z-10 text-sm">Follow</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
       </a>
     </Card>
   );

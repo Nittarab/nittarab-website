@@ -41,16 +41,18 @@ registry:
 builder:
   arch:
     - amd64
+  secrets:
+    - NEXT_PUBLIC_MAPBOX_TOKEN
 
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
   secret:
     - GITHUB_TOKEN
-    - CDP_API_KEY_ID
-    - CDP_API_KEY_SECRET
+    - WEFT_FACILITATOR_API_KEY
   clear:
     X402_NETWORK: base
+    X402_FACILITATOR_URL: https://x402.weft.network
     RESOURCE_WALLET_ADDRESS: "0x89764c3dEd721c29999A237cF935a34e1C8EDf97"
     BASE_URL: "https://nittarab.dev"
 

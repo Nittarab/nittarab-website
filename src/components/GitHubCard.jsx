@@ -60,14 +60,14 @@ export default function GitHubCard({ className, onLoad }) {
   if (!contributionData) {
     return (
       <Card
-        className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 border border-white border-opacity-30 ${className}`}
+        className={`bg-linear-to-br from-gray-200 to-gray-300 p-4 border border-white/30 ${className}`}
       >
         <div className="flex items-center space-x-2 mb-4">
           <div className="w-5 h-5 bg-gray-400/50 rounded-full animate-pulse"></div>
           <div className="h-6 w-20 bg-gray-400/50 rounded animate-pulse"></div>
         </div>
         <div className="mb-4 relative">
-          <div className="grid grid-cols-[repeat(17,_minmax(0,1fr))] gap-1">
+          <div className="grid grid-cols-17 gap-1">
             {[...Array(17)].map((_, colIndex) => (
               <div key={colIndex} className="grid grid-rows-7 gap-1">
                 {[...Array(7)].map((_, rowIndex) => (
@@ -89,7 +89,7 @@ export default function GitHubCard({ className, onLoad }) {
   return (
     <Card
       ref={containerRef}
-      className={`bg-gradient-to-br from-gray-200 to-gray-300 p-4 border border-white border-opacity-30 ${className}`}
+      className={`bg-linear-to-br from-gray-200 to-gray-300 p-4 border border-white/30 ${className}`}
     >
       <div className="flex items-center space-x-2 mb-4">
         <div className="relative">
@@ -109,7 +109,7 @@ export default function GitHubCard({ className, onLoad }) {
         </p>
       </div>
       <div className="mb-4 relative">
-        <div className="grid grid-cols-[repeat(17,_minmax(0,1fr))] gap-1">
+        <div className="grid grid-cols-17 gap-1">
           {contributionData.contributions.map((column, columnIndex) => (
             <div key={columnIndex} className="grid grid-rows-7 gap-1">
               {column.map((day, dayIndex) => (
@@ -139,7 +139,7 @@ export default function GitHubCard({ className, onLoad }) {
       <div className="space-y-2">
         <a
           href="/skyline"
-          className="block w-full rounded-full bg-gradient-to-r from-green-500 to-emerald-600 px-4 py-2 text-center font-clash-display-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+          className="block w-full rounded-full bg-linear-to-r from-green-500 to-emerald-600 px-4 py-2 text-center font-clash-display-medium text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
         >
           Explore my 3D skyline
         </a>
@@ -147,10 +147,10 @@ export default function GitHubCard({ className, onLoad }) {
           href="https://github.com/nittarab"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative block w-full overflow-hidden rounded-full bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-2 text-center font-clash-display-medium text-white transition-all duration-300 hover:shadow-lg"
+          className="group relative block w-full overflow-hidden rounded-full bg-linear-to-r from-gray-700 to-gray-900 px-4 py-2 text-center font-clash-display-medium text-white transition-all duration-300 hover:shadow-lg"
         >
           <span className="relative z-10 text-base">Follow on GitHub</span>
-          <div className="absolute inset-0 origin-left scale-x-0 transform bg-gradient-to-r from-gray-800 to-black transition-transform duration-300 group-hover:scale-x-100"></div>
+          <div className="absolute inset-0 origin-left scale-x-0 transform bg-linear-to-r from-gray-800 to-black transition-transform duration-300 group-hover:scale-x-100"></div>
         </a>
       </div>
     </Card>

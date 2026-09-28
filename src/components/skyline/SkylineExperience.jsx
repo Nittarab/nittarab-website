@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable react/no-unknown-property, react-hooks/immutability */
-
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
