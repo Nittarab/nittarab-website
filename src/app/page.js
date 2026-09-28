@@ -72,9 +72,34 @@ export default function Home() {
           <p
             className={`text-base sm:text-lg font-clash-display-regular mb-4 sm:mb-5 max-w-md text-left transition-colors duration-300 text-foreground/80`}
           >
-            {theme === "day"
-              ? "I build Weft, so AI agents can reach data, software, and services through one integration."
-              : "By night, I ship Weft and explore new interesting tech."}
+            {theme === "day" ? (
+              <>
+                I build{" "}
+                <a
+                  href="https://weftlabs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-green-500/50 hover:decoration-green-500"
+                >
+                  Weft
+                </a>
+                , so AI agents can reach data, software, and services through one
+                integration.
+              </>
+            ) : (
+              <>
+                By night, I ship{" "}
+                <a
+                  href="https://weftlabs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-green-500/50 hover:decoration-green-500"
+                >
+                  Weft
+                </a>{" "}
+                and explore new interesting tech.
+              </>
+            )}
           </p>
           <p
             className={`text-base sm:text-lg font-clash-display-regular mb-8 sm:mb-10 max-w-md text-left transition-colors duration-300 text-foreground/80`}

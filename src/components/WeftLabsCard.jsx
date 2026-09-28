@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Card from "./ui/Card";
 
 export default function WeftLabsCard() {
@@ -26,9 +27,15 @@ export default function WeftLabsCard() {
             with pay-per-use access and spending controls.
           </p>
 
-          <span className="mt-auto font-clash-display-medium text-sm text-foreground underline decoration-green-500/50 transition-all group-hover:decoration-green-500">
-            weftlabs.com
-          </span>
+          <div className="relative mt-auto aspect-2/1 w-full overflow-hidden rounded-xl border border-muted shadow-inner transition-colors group-hover:border-primary/50">
+            <Image
+              src="/weft_cover.webp"
+              alt="Weft Labs: one integration, all the APIs"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover object-left transform transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
         </div>
       </Card>
     </a>
