@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { fetchGithubContributions } from "../app/actions/fetchGithubContributions";
-import calendarSnapshot from "../data/github-calendar.json";
 import Card from "./ui/Card";
 
 const WEEKS_TO_SHOW = 17;
@@ -52,22 +51,15 @@ function colorClass(count, [low, mid, high]) {
 }
 
 export default function GitHubCard({ className, onLoad }) {
-  const [calendar, setCalendar] = useState(calendarSnapshot);
+  const [calendar, setCalendar] = useState(null);
   const [hoverInfo, setHoverInfo] = useState(null);
   const containerRef = useRef(null);
   const popoverRef = useRef(null);
-  const weeks = visibleWeeks(calendar);
-  const levels = thresholds(weeks);
-  const recentTotal = windowTotal(weeks);
 
   useEffect(() => {
     fetchGithubContributions()
-      .then((live) => {
-        if (live?.totalContributions >= calendarSnapshot.totalContributions) {
-          setCalendar(live);
-        }
-      })
-      .catch(() => {})
+      .then((live) => setCalendar(live))
+      .catch(() => setCalendar(null))
       .finally(() => {
         if (onLoad) onLoad();
       });
@@ -100,6 +92,21 @@ export default function GitHubCard({ className, onLoad }) {
     popover.style.left = `${left}px`;
     popover.style.top = `${top}px`;
   }, [hoverInfo]);
+
+  if (!calendar) {
+    return (
+      <Card
+        className={`border border-white/30 bg-linear-to-br from-gray-200 to-gray-300 p-4 ${className}`}
+      >
+        <div className="mb-4 h-6 w-24 animate-pulse rounded bg-gray-400/50" />
+        <div className="mb-4 h-28 animate-pulse rounded-lg bg-gray-400/30" />
+      </Card>
+    );
+  }
+
+  const weeks = visibleWeeks(calendar);
+  const levels = thresholds(weeks);
+  const recentTotal = windowTotal(weeks);
 
   return (
     <Card
