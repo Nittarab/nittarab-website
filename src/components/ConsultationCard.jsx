@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
+import Link from "next/link";
+import { useRef, useState } from "react";
 import Card from "./ui/Card";
 
 export default function ConsultationCard() {
@@ -79,30 +80,21 @@ export default function ConsultationCard() {
           </div>
 
           <p className="text-muted-foreground text-base mb-6 leading-relaxed">
-            Transform your team with{" "}
+            Half-day workshop: leave with an{" "}
             <span className="text-purple-600 dark:text-purple-400 font-medium">
-              AI Agents
-            </span>
-            ,{" "}
-            <span className="text-blue-600 dark:text-blue-400 font-medium">
-              Copilot
-            </span>
-            , and{" "}
-            <span className="text-green-600 dark:text-green-400 font-medium">
-              Cursor
-            </span>
-            . Expert guidance on context engineering and workflow optimization.
+              agent-owned workflow
+            </span>{" "}
+            on your stack: live backlog under NDA, playbook, and a 30-day pilot.
+            From CHF 2’500.
           </p>
         </div>
 
         <div className="relative z-10 flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://calendar.app.google/qt6ytm3NXidsqPYr8"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/agentic-workshop"
             className="flex-1 bg-foreground text-background py-2.5 px-4 rounded-xl font-clash-display-medium text-sm text-center hover:opacity-90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20"
           >
-            <span>Book Call</span>
+            <span>View workshop</span>
             <svg
               aria-hidden="true"
               className="w-4 h-4"
@@ -114,11 +106,12 @@ export default function ConsultationCard() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                d="M9 5l7 7-7 7"
               />
             </svg>
-          </a>
+          </Link>
           <button
+            type="button"
             onClick={handleCopyEmail}
             className="flex-1 bg-muted text-foreground py-2.5 px-4 rounded-xl font-clash-display-medium text-sm text-center hover:bg-accent transition-all border border-border hover:border-muted-foreground/50 flex items-center justify-center gap-2"
           >

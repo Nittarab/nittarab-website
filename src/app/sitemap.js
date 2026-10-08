@@ -15,6 +15,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/agentic-workshop`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/skyline`,
       lastModified: new Date(),
       changeFrequency: "weekly",

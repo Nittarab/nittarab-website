@@ -38,3 +38,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+.aw-preview/
+.aw-assets-archive/
+scripts/aw-mockups/
+.audit-screenshots/

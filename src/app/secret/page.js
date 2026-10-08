@@ -163,7 +163,7 @@ export default function SecretPage() {
           {/* Action Area */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-green-900/30">
             <a
-              href="https://calendar.app.google/qt6ytm3NXidsqPYr8"
+              href="https://calendar.app.google/8HnmappTvKTP2txz5"
               target="_blank"
               rel="noreferrer"
               className="group relative inline-flex items-center gap-2 px-8 py-3 rounded-full bg-green-500 text-black font-bold hover:bg-green-400 transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(74,222,128,0.4)]"

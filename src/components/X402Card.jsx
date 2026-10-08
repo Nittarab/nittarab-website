@@ -96,7 +96,7 @@ export default function X402Card() {
 
         <div className="relative z-10 flex flex-col sm:flex-row gap-3">
           <a
-            href="https://calendar.app.google/qt6ytm3NXidsqPYr8"
+            href="https://calendar.app.google/8HnmappTvKTP2txz5"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 bg-foreground text-background py-2.5 px-4 rounded-xl font-clash-display-medium text-sm text-center hover:opacity-90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-green-500/10 hover:shadow-green-500/20"
