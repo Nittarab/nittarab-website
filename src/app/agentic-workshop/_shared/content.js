@@ -24,12 +24,6 @@ export const pricing = {
   consulting: "Scoped separately",
 };
 
-export const problems = [
-  "Copilot or chat demos that never stuck. AI stays in a side window",
-  "Inconsistent AI PRs: some helpful, many noisy, no shared bar for review",
-  "No shared method for when an agent owns a change end to end",
-];
-
 export const artefacts = [
   {
     title: "Live session on your backlog",
@@ -56,15 +50,6 @@ export const artefacts = [
     detail:
       "A short, ranked list of workflows to try next, with owners and success criteria.",
   },
-];
-
-export const playbookToc = [
-  "1. Roles & handoffs",
-  "2. When an agent owns a change",
-  "3. Issue → plan → tested change",
-  "4. Review bar for agent-assisted PRs",
-  "5. Repo instructions (starter)",
-  "6. 30-day pilot backlog",
 ];
 
 export const waysToWork = [
@@ -109,38 +94,6 @@ export const beforeSession = [
     title: "Who attends",
     detail:
       "Best at about 6–12: leads and ICs who will own the pilot, not a spectator room.",
-  },
-];
-
-export const agenda = [
-  {
-    title: "Context & goals",
-    time: "25 min",
-    detail:
-      "Where your team stalls with copilots today; what “agent-owned” should mean for you.",
-  },
-  {
-    title: "Live workflow",
-    time: "75 min",
-    detail:
-      "On your backlog (NDA): issue → plan → change → tests. Guardrails as we go.",
-  },
-  {
-    title: "Break",
-    time: "15 min",
-    detail: "Short pause. Optional questions offline.",
-  },
-  {
-    title: "Method & artefacts",
-    time: "50 min",
-    detail:
-      "Playbook, review checklist, repo instruction starter, adapted to your tools.",
-  },
-  {
-    title: "Pilot & after",
-    time: "30 min",
-    detail:
-      "30-day backlog, who owns what, optional fixed consulting block for the pilot.",
   },
 ];
 
@@ -217,107 +170,25 @@ export const faqs = [
   },
 ];
 
-export const takeaways = [
-  "A shared definition of agent-owned work for your team",
-  "One live issue → plan → tested change on your stack (NDA)",
-  "Playbook + review checklist + repo instructions you keep",
-  "Ranked 30-day pilot backlog with owners",
-  "Clear next step: optional fixed consulting block",
-];
-
-/** Public paths under /public/agentic-workshop. Real captures + premium UI mockups (prefer .jpg) */
+/** Image paths used by the page (local files under /public). */
 export const workshopImages = {
-  officialOrca: "/agentic-workshop/official-orca.jpg",
-  officialClaudeCode: "/agentic-workshop/official-claude-code.png",
-  officialGhaw: "/agentic-workshop/official-github-agentic-workflows.png",
-  officialCopilotAgents: "/agentic-workshop/official-copilot-agents-ui.jpg",
-  officialCopilotApp: "/agentic-workshop/official-copilot-app.jpg",
-  schemaHalfday: "/agentic-workshop/schema-halfday.jpg",
-  schemaFactoryStack: "/agentic-workshop/schema-factory-stack.jpg",
-  heroCinematic: "/agentic-workshop/hero-cinematic.jpg",
-  agentPr: "/agentic-workshop/mock-agent-pr.jpg",
-  playbookCover: "/agentic-workshop/playbook-cover.jpg",
   liveSession: "/agentic-workshop/official-copilot-agents-ui.jpg",
   repoInstructions: "/agentic-workshop/official-claude-code.png",
-  pilotBoard: "/agentic-workshop/mock-pilot-board.jpg",
-  reviewChecklist: "/agentic-workshop/mock-review-checklist.jpg",
-  saasTimeline: "/agentic-workshop/hero-saas-timeline.jpg",
+  howWeWork: "/agentic-workshop/schema-halfday.jpg",
   methodLoop: "/agentic-workshop/method-loop.jpg",
-  beforeAdhoc: "/agentic-workshop/before-adhoc.jpg",
-  afterPlaybook: "/agentic-workshop/after-playbook.jpg",
-  consoleLog: "/agentic-workshop/console-log.jpg",
-  consoleDashboard: "/agentic-workshop/console-dashboard.jpg",
-  agendaTimeline: "/agentic-workshop/agenda-timeline.jpg",
-  ticketPlan: "/agentic-workshop/mock-ticket-plan.jpg",
-  testsGreen: "/agentic-workshop/mock-tests-green.jpg",
-  loom: "/agentic-workshop/loom-walkthrough.jpg",
-  founderDesk: "/agentic-workshop/founder-desk.jpg",
-  beforeAfterHowWeWork: "/agentic-workshop/schema-halfday.jpg",
-  /** Real photo already in /public */
+  reviewChecklist: "/agentic-workshop/mock-review-checklist.jpg",
+  pilotBoard: "/agentic-workshop/mock-pilot-board.jpg",
   founderPhoto: "/nittarab_profile.webp",
 };
 
-/** Map artefact titles → workshop image paths */
+/** Map artefact titles to workshop image paths */
 export const artefactImageByTitle = {
   "Live session on your backlog": workshopImages.liveSession,
   "Team playbook": workshopImages.methodLoop,
-  "Review checklist": workshopImages.consoleDashboard,
+  "Review checklist": workshopImages.reviewChecklist,
   "Repo instruction starter": workshopImages.repoInstructions,
-  "30-day pilot backlog": workshopImages.consoleLog,
+  "30-day pilot backlog": workshopImages.pilotBoard,
 };
-
-export const versions = [
-  {
-    id: "v01",
-    label: "Cinematic product",
-    blurb: "Bold hierarchy, framed product shots, motion-ready.",
-  },
-  {
-    id: "v02",
-    label: "Magazine editorial",
-    blurb: "Swiss type, pull quotes, artefacts as figures.",
-  },
-  {
-    id: "v03",
-    label: "SaaS product LP",
-    blurb: "Pricing cards, social-proof strip, sticky CTA.",
-  },
-  {
-    id: "v04",
-    label: "Founder story",
-    blurb: "Photo-forward, CV proof, Loom placeholders.",
-  },
-  {
-    id: "v05",
-    label: "Method manifesto",
-    blurb: "How I work timeline, diagrams, before/after.",
-  },
-  {
-    id: "v06",
-    label: "Agent ops console",
-    blurb: "Dark cyber aesthetic, still readable.",
-  },
-  {
-    id: "v07",
-    label: "Ultra-minimal",
-    blurb: "H1, three artefacts, one CTA. Almost nothing else.",
-  },
-  {
-    id: "v08",
-    label: "Syllabus catalog",
-    blurb: "Agenda-heavy, takeaways checklist, school-of-one.",
-  },
-  {
-    id: "v09",
-    label: "Case-study first",
-    blurb: "Anonymized half-day narrative + proof artefacts.",
-  },
-  {
-    id: "v10",
-    label: "Consulting brochure",
-    blurb: "Safe corporate, all info, least flashy.",
-  },
-];
 
 /** Open-source stacks to evaluate when building a coding factory around your repos.
  * Stars / activity are approximate snapshots (Oct 2026), not live API values.
